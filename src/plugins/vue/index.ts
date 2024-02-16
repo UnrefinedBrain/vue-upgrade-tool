@@ -4,6 +4,7 @@ import { vueDeletePlugin } from './delete';
 import { vueUsePlugin } from './use';
 import { contextualHPlugin } from './h';
 import { defineComponentPlugin } from './defineComponent';
+import { eventListenersNativePlugin } from './event-listeners-native';
 
 export const vue = (): Plugin[] => ([
   vueSetPlugin,
@@ -12,4 +13,5 @@ export const vue = (): Plugin[] => ([
   vueUsePlugin,
   contextualHPlugin,
   defineComponentPlugin,
+  eventListenersNativePlugin,
 ]);
