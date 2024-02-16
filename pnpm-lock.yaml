@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   vue-metamorph:
-    specifier: ^1.0.0
-    version: 1.0.3(eslint@8.56.0)
+    specifier: ^1.0.4
+    version: 1.0.4(eslint@8.56.0)
 
 devDependencies:
   '@types/node':
@@ -1021,11 +1021,6 @@ packages:
     resolution: {integrity: sha512-EjePK1srD3P08o2j4f0ExnylqRs5B9tJjcp9t1krH2qRi8CCdsYfwe9JgSLurFBWwq4uOlipzfk5fHNvwFKr8Q==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     dev: true
-
-  /diff@5.2.0:
-    resolution: {integrity: sha512-uIFDxqpRZGZ6ThOk84hEfqWoHx2devRFvpTZcTHur85vImfaxUbTW9Ryh4CpCuDnToOP1CEtXKIgytHBPVff5A==}
-    engines: {node: '>=0.3.1'}
-    dev: false
 
   /dir-glob@3.0.1:
     resolution: {integrity: sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==}
@@ -2774,8 +2769,8 @@ packages:
       - supports-color
     dev: false
 
-  /vue-metamorph@1.0.3(eslint@8.56.0):
-    resolution: {integrity: sha512-lBYaj4zlHM+mJxEUjR9bJYk7Pi3MgXfwMNe/ZM8oHoKjbmpHUd5YT1pc4q/MXipAaS5mDev+SiCVi52BBEqd+A==}
+  /vue-metamorph@1.0.4(eslint@8.56.0):
+    resolution: {integrity: sha512-xbLk0RREIMGR/7ZXP1ZRa8DHxLNo5JMHJOyKH0DDbXVCEOiU5V9KV4by0k1X3/k4AMZA1kxQJ8ITzieywhCWww==}
     hasBin: true
     dependencies:
       '@babel/parser': 7.23.9
@@ -2784,7 +2779,6 @@ packages:
       cli-progress: 3.12.0
       commander: 12.0.0
       deep-diff: 1.0.2
-      diff: 5.2.0
       fs-extra: 11.2.0
       glob: 10.3.10
       lodash-es: 4.17.21

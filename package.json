@@ -9,7 +9,7 @@
     "test": "vitest"
   },
   "dependencies": {
-    "vue-metamorph": "^1.0.0"
+    "vue-metamorph": "^1.0.4"
   },
   "devDependencies": {
     "@types/node": "^20.11.15",
