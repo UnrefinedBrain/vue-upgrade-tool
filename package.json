@@ -1,0 +1,25 @@
+{
+  "name": "vue-upgrade-tool",
+  "type": "module",
+  "bin": {
+    "vue-upgrade-tool": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc && vite build && chmod +x dist/cli.js",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "vue-metamorph": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.15",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "@typescript-eslint/parser": "^6.20.0",
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.12",
+    "vitest": "^1.2.1"
+  }
+}
