@@ -1,6 +1,6 @@
 import { it, expect } from 'vitest';
 import { transform } from 'vue-metamorph';
-import { vueDeletePlugin } from './vue-delete.js';
+import { vueDeletePlugin } from './delete';
 
 it('should replace Vue.delete and whatever.$delete', () => {
   const input = `
