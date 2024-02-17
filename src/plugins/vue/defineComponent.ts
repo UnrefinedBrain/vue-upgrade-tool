@@ -3,10 +3,10 @@ import { CodemodPlugin, namedTypes } from 'vue-metamorph';
 export const defineComponentPlugin: CodemodPlugin = {
   type: 'codemod',
   name: 'defineComponent',
-  transform(scriptAST, _sfcAST, filename, { traverseScriptAST, astHelpers, scriptBuilders }) {
+  transform(scriptASTs, _sfcAST, filename, { traverseScriptAST, astHelpers, scriptBuilders }) {
     let count = 0;
 
-    if (scriptAST) {
+    for (const scriptAST of scriptASTs) {
       let insertImport = false;
 
       if (filename.endsWith('.vue')) {

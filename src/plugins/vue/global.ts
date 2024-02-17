@@ -3,10 +3,10 @@ import { ManualMigrationPlugin } from 'vue-metamorph';
 export const vueGlobalPlugin: ManualMigrationPlugin = {
   type: 'manual',
   name: 'vue-use',
-  find(scriptAST, _templateAST, _filename, report, {
+  find(scriptASTs, _templateAST, _filename, report, {
     traverseScriptAST,
   }) {
-    if (scriptAST) {
+    for (const scriptAST of scriptASTs) {
       traverseScriptAST(scriptAST, {
         visitMemberExpression(path) {
           if (path.node.object.type === 'Identifier'

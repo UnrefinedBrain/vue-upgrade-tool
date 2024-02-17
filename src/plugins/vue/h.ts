@@ -3,10 +3,10 @@ import { CodemodPlugin, namedTypes } from 'vue-metamorph';
 export const contextualHPlugin: CodemodPlugin = {
   type: 'codemod',
   name: 'contextual-h',
-  transform(scriptAST, _sfcAST, _filename, utils) {
+  transform(scriptASTs, _sfcAST, _filename, utils) {
     let count = 0;
 
-    if (scriptAST) {
+    for (const scriptAST of scriptASTs) {
       let addImport = false;
       const renames: {
         node: namedTypes.FunctionExpression | namedTypes.ArrowFunctionExpression

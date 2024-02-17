@@ -29,8 +29,8 @@ const isValid = (node: Kinds.ExpressionKind | namedTypes.SpreadElement | undefin
 export const vueSetManualPlugin: ManualMigrationPlugin = {
   type: 'manual',
   name: 'vue-set-manual',
-  find(scriptAST, _templateAST, _filename, report, { traverseScriptAST }) {
-    if (scriptAST) {
+  find(scriptASTs, _templateAST, _filename, report, { traverseScriptAST }) {
+    for (const scriptAST of scriptASTs) {
       traverseScriptAST(scriptAST, {
         visitCallExpression(path) {
           if (isVueSet(path.node) && path.node.arguments.length !== 3) {
@@ -47,7 +47,7 @@ export const vueSetPlugin: CodemodPlugin = {
   type: 'codemod',
   name: 'vue-set',
   transform(
-    scriptAST,
+    scriptASTs,
     templateAST,
     _filename,
     {
@@ -57,7 +57,7 @@ export const vueSetPlugin: CodemodPlugin = {
     let count = 0;
 
     // look for something.$set() or Vue.set() calls in the script
-    if (scriptAST) {
+    for (const scriptAST of scriptASTs) {
       traverseScriptAST(scriptAST, {
         visitCallExpression(path) {
           if (isVueSet(path.node)) {

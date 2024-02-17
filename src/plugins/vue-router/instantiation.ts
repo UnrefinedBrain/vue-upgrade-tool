@@ -3,9 +3,9 @@ import { CodemodPlugin } from 'vue-metamorph';
 export const vueRouterInstantiationPlugin: CodemodPlugin = {
   type: 'codemod',
   name: 'vue-router-instantiation',
-  transform(scriptAST, _templateAST, _filename, { traverseScriptAST, scriptBuilders: sb }) {
+  transform(scriptASTs, _templateAST, _filename, { traverseScriptAST, scriptBuilders: sb }) {
     let count = 0;
-    if (scriptAST) {
+    for (const scriptAST of scriptASTs) {
       traverseScriptAST(scriptAST, {
         visitImportDeclaration(path) {
           if (path.node.source.value === 'vue-router') {

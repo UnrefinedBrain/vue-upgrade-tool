@@ -29,6 +29,7 @@ module.exports = {
     'import/extensions': 0,
     'no-await-in-loop': 0,
     'no-continue': 0,
+    '@typescript-eslint/no-loop-func': 0,
   },
   overrides: [
     {

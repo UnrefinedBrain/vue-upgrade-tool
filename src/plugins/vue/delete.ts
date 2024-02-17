@@ -27,10 +27,10 @@ const isValid = (node: Kinds.ExpressionKind | namedTypes.SpreadElement | undefin
 export const vueDeletePlugin: CodemodPlugin = {
   type: 'codemod',
   name: 'vue-delete',
-  transform(scriptAST, _templateAST, _filename, { traverseScriptAST, scriptBuilders }) {
+  transform(scriptASTs, _templateAST, _filename, { traverseScriptAST, scriptBuilders }) {
     let count = 0;
 
-    if (scriptAST) {
+    for (const scriptAST of scriptASTs) {
       traverseScriptAST(scriptAST, {
         visitCallExpression(path) {
           if (isVueDelete(path.node)) {
