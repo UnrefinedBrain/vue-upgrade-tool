@@ -17,11 +17,9 @@ export const vBindSyncPlugin: CodemodPlugin = {
 
       for (const bind of binds) {
         if (bind.modifiers.some((m) => m.name === 'sync')) {
-          bind.parent.directive = true;
-          bind.parent.key = templateBuilders.vDirectiveKey(
-            templateBuilders.vIdentifier('model'),
-            bind.argument,
-          );
+          bind.name.name = 'model';
+          bind.name.rawName = 'model';
+          bind.modifiers = bind.modifiers.filter((m) => m.name !== 'sync');
 
           count++;
         }
