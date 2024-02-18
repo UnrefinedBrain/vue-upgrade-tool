@@ -5,7 +5,6 @@ export const eventListenersNativePlugin: CodemodPlugin = {
   name: 'v-on-native',
   transform(_, sfcAST, _filename, { traverseTemplateAST }) {
     let count = 0;
-    count++;
 
     if (sfcAST) {
       traverseTemplateAST(sfcAST, {

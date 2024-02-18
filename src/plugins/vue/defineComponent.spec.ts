@@ -21,7 +21,8 @@ export default {
 
   expect(transform(input, 'file.vue', [defineComponentPlugin]).code).toMatchInlineSnapshot(`
     "
-    <script>import { defineComponent } from 'vue';
+    <script>
+    import { defineComponent } from 'vue';
 
     export default defineComponent({
       computed: {
