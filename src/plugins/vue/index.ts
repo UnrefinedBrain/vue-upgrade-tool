@@ -8,6 +8,7 @@ import { eventListenersNativePlugin } from './event-listeners-native';
 import { hookEventsPlugin } from './hook-events';
 import { vBindSyncPlugin } from './v-bind-sync';
 import { scopedSlotsPlugin } from './scopedSlots';
+import { nextTickPlugin } from './nextTick';
 
 export const vue = (): Plugin[] => ([
   vueSetPlugin,
@@ -20,4 +21,5 @@ export const vue = (): Plugin[] => ([
   hookEventsPlugin,
   vBindSyncPlugin,
   scopedSlotsPlugin,
+  nextTickPlugin,
 ]);
