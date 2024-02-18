@@ -24,7 +24,7 @@ export const vueGlobalPlugin: ManualMigrationPlugin = {
             && path.node.callee.property.type === 'Identifier'
             && path.node.callee.object.name === 'Vue'
             && ['config', 'component', 'mixin', 'directive', 'use'].includes(path.node.callee.property.name)) {
-            report(path.node, `Move Vue.${path.node.callee.property.name}() to chain from createApp()`);
+            report(path.node, `Move Vue.${path.node.callee.property.name}() to chain from createApp()\nSee: https://v3-migration.vuejs.org/breaking-changes/global-api.html#global-api-application-instance`);
           }
           this.traverse(path);
         },

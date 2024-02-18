@@ -23,7 +23,8 @@ Vue.prototype.something = () => {
         "file": "file.ts",
         "lineEnd": 2,
         "lineStart": 2,
-        "message": "Move Vue.use() to chain from createApp()",
+        "message": "Move Vue.use() to chain from createApp()
+    See: https://v3-migration.vuejs.org/breaking-changes/global-api.html#global-api-application-instance",
         "pluginName": "vue-use",
         "snippet": "1 | 
     2 | Vue.use(SomePlugin);
@@ -38,7 +39,8 @@ Vue.prototype.something = () => {
         "file": "file.ts",
         "lineEnd": 3,
         "lineStart": 3,
-        "message": "Move Vue.directive() to chain from createApp()",
+        "message": "Move Vue.directive() to chain from createApp()
+    See: https://v3-migration.vuejs.org/breaking-changes/global-api.html#global-api-application-instance",
         "pluginName": "vue-use",
         "snippet": "1 | 
     2 | Vue.use(SomePlugin);
@@ -54,7 +56,8 @@ Vue.prototype.something = () => {
         "file": "file.ts",
         "lineEnd": 4,
         "lineStart": 4,
-        "message": "Move Vue.component() to chain from createApp()",
+        "message": "Move Vue.component() to chain from createApp()
+    See: https://v3-migration.vuejs.org/breaking-changes/global-api.html#global-api-application-instance",
         "pluginName": "vue-use",
         "snippet": "1 | 
     2 | Vue.use(SomePlugin);
@@ -71,7 +74,8 @@ Vue.prototype.something = () => {
         "file": "file.ts",
         "lineEnd": 5,
         "lineStart": 5,
-        "message": "Move Vue.mixin() to chain from createApp()",
+        "message": "Move Vue.mixin() to chain from createApp()
+    See: https://v3-migration.vuejs.org/breaking-changes/global-api.html#global-api-application-instance",
         "pluginName": "vue-use",
         "snippet": "2 | Vue.use(SomePlugin);
     3 | Vue.directive({});
