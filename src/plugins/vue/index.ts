@@ -6,6 +6,7 @@ import { contextualHPlugin } from './h';
 import { defineComponentPlugin } from './defineComponent';
 import { eventListenersNativePlugin } from './event-listeners-native';
 import { hookEventsPlugin } from './hook-events';
+import { vBindSyncPlugin } from './v-bind-sync';
 
 export const vue = (): Plugin[] => ([
   vueSetPlugin,
@@ -16,4 +17,5 @@ export const vue = (): Plugin[] => ([
   defineComponentPlugin,
   eventListenersNativePlugin,
   hookEventsPlugin,
+  vBindSyncPlugin,
 ]);
