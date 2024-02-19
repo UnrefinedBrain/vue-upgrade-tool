@@ -1,13 +1,29 @@
 {
   "name": "vue-upgrade-tool",
+  "description": "Tool to aid in Vue 2 -> Vue 3 migration",
   "type": "module",
+  "version": "1.0.0",
   "bin": {
     "vue-upgrade-tool": "dist/cli.js"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UnrefinedBrain/vue-upgrade-tool.git"
+  },
+  "author": {
+    "name": "UnrefinedBrain",
+    "email": "github@unrefinedbrain.dev",
+    "url": "https://github.com/UnrefinedBrain"
   },
   "scripts": {
     "build": "tsc && vite build && chmod +x dist/cli.js",
     "test": "vitest"
   },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "dependencies": {
     "vue-metamorph": "^2.0.3"
   },
