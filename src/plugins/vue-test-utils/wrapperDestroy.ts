@@ -37,7 +37,7 @@ export const wrapperDestroyCodemodPlugin: CodemodPlugin = {
 export const wrapperDestroyManualMigrationPlugin: ManualMigrationPlugin = {
   type: 'manual',
   name: 'wrapper-destroy-manual',
-  find(scriptASTs, sfcAST, filename, report, utils) {
+  find(scriptASTs, _sfcAST, filename, report, utils) {
     if (scriptASTs[0] && (filename.includes('.spec') || filename.includes('.test'))) {
       utils.astHelpers.findAll(scriptASTs[0], {
         type: 'CallExpression',
