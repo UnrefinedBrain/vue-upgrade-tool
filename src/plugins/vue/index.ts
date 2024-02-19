@@ -16,6 +16,7 @@ import { functionalComponentPlugin } from './functional-component';
 import { removeListenersCodemodPlugin, removeListenersManualMigrationPlugin } from './listeners';
 import { filtersPlugin } from './filters';
 import { childrenPlugin } from './children';
+import { propsDefaultThisPlugin } from './props-default-this';
 
 export const vue = (): Plugin[] => ([
   vueSetPlugin,
@@ -37,4 +38,5 @@ export const vue = (): Plugin[] => ([
   removeListenersManualMigrationPlugin,
   filtersPlugin,
   childrenPlugin,
+  propsDefaultThisPlugin,
 ]);
