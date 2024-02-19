@@ -56,7 +56,19 @@ const withVueExtend = Vue.extend({
   },
 });
 
-const withVueComponent = Vue.extend({
+const withVueComponent = Vue.component({
+  computed: {
+    three() {
+      return 3;
+    },
+
+    six() {
+      return this.three + this.three;
+    },
+  },
+});
+
+const withVueMixin = Vue.mixin({
   computed: {
     three() {
       return 3;
@@ -85,6 +97,18 @@ const withVueComponent = Vue.extend({
     });
 
     const withVueComponent = defineComponent({
+      computed: {
+        three() {
+          return 3;
+        },
+
+        six() {
+          return this.three + this.three;
+        },
+      },
+    });
+
+    const withVueMixin = Vue.mixin({
       computed: {
         three() {
           return 3;
