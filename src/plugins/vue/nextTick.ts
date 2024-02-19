@@ -5,7 +5,6 @@ export const nextTickPlugin: CodemodPlugin = {
   name: 'nextTick',
   transform(scriptASTs, _sfcAST, _filename, { astHelpers, scriptBuilders }) {
     let count = 0;
-    count++;
 
     for (const scriptAST of scriptASTs) {
       let insertImport = false;

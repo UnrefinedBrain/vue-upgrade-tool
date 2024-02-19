@@ -5,7 +5,6 @@ export const functionalComponentPlugin: CodemodPlugin = {
   name: 'functional-component',
   transform(scriptASTs, sfcAST, filename, { astHelpers }) {
     let count = 0;
-    count++;
 
     for (const scriptAST of scriptASTs) {
       for (const options of astHelpers.findVueComponentOptions(scriptAST, filename.endsWith('.vue'))) {

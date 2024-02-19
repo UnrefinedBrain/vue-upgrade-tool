@@ -5,7 +5,6 @@ export const removeListenersCodemodPlugin: CodemodPlugin = {
   name: 'remove-listeners',
   transform(_scriptASTs, sfcAST, _filename, { astHelpers, traverseTemplateAST }) {
     let count = 0;
-    count++;
 
     if (sfcAST) {
       traverseTemplateAST(sfcAST, {
@@ -16,10 +15,16 @@ export const removeListenersCodemodPlugin: CodemodPlugin = {
                 return true;
               }
 
-              return !astHelpers.findFirst(attr, {
+              const res = !astHelpers.findFirst(attr, {
                 type: 'Identifier',
                 name: '$listeners',
               });
+
+              if (!res) {
+                count++;
+              }
+
+              return res;
             });
           }
         },
