@@ -44,8 +44,8 @@ It will upgrade JS/TS files, SFCs, and unit tests.
 | [catch-all routes syntax changed](./src/plugins/vue-router/catch-all.spec.ts) | manual | [Link](https://router.vuejs.org/guide/migration/#Removed-star-or-catch-all-routes) |
 | `currentRoute.something` becomes `currentRoute.value.something` | automatic | [Link](https://router.vuejs.org/guide/migration/#Removed-star-or-catch-all-routes) |
 | [`onReady` replaced with `isReady`](./src/plugins/vue-router/onReady.spec.ts) | automatic | [Link](https://router.vuejs.org/guide/migration/#Replaced-onReady-with-isReady) |
-| `append` prop in `router-link` removed | manual | [Link](https://router.vuejs.org/guide/migration/#Removal-of-append-prop-in-router-link-) |
-| `event` and `tag` props in `router-link` removed | manual | [Link](https://router.vuejs.org/guide/migration/#Removal-of-event-and-tag-props-in-router-link-) |
+| [`append` prop in `router-link` removed](./src/plugins/vue-router/router-link-props.spec.ts) | manual | [Link](https://router.vuejs.org/guide/migration/#Removal-of-append-prop-in-router-link-) |
+| [`event` and `tag` props in `router-link` removed](./src/plugins/vue-router/router-link-props.spec.ts) | manual | [Link](https://router.vuejs.org/guide/migration/#Removal-of-event-and-tag-props-in-router-link-) |
 | `exact` prop in `router-link` removed | automatic | [Link](https://router.vuejs.org/guide/migration/#Removal-of-the-exact-prop-in-router-link-) |
 | `router.match()` removed | manual | [Link](https://router.vuejs.org/guide/migration/#Removal-of-router-match-and-changes-to-router-resolve) |
 | `router.getMatchedComponents()` removed | automatic | [Link](https://router.vuejs.org/guide/migration/#Removal-of-router-getMatchedComponents-) |

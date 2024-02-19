@@ -5,9 +5,12 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  change-case:
+    specifier: ^5.4.3
+    version: 5.4.3
   vue-metamorph:
-    specifier: ^2.0.4
-    version: 2.0.4(eslint@8.56.0)
+    specifier: ^2.0.5
+    version: 2.0.5(eslint@8.56.0)
 
 devDependencies:
   '@types/node':
@@ -921,6 +924,10 @@ packages:
   /chalk@5.3.0:
     resolution: {integrity: sha512-dLitG79d+GV1Nb/VYcCDFivJeK1hiukt9QjRNVOsUtTy1rR1YJsmpGGTZ3qJos+uw7WmWF4wUwBd9jxjocFC2w==}
     engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
+    dev: false
+
+  /change-case@5.4.3:
+    resolution: {integrity: sha512-4cdyvorTy/lViZlVzw2O8/hHCLUuHqp4KpSSP3DlauhFCf3LdnfF+p5s0EAhjKsU7bqrMzu7iQArYfoPiHO2nw==}
     dev: false
 
   /check-error@1.0.3:
@@ -2769,8 +2776,8 @@ packages:
       - supports-color
     dev: false
 
-  /vue-metamorph@2.0.4(eslint@8.56.0):
-    resolution: {integrity: sha512-Awa3OHX6CTo92WwZt5+jxnWssD810NZ9F78cATPN8XgU+GDMnHj6zV6333fcTMlEQYYJVWKENA4R40+o+d8p9g==}
+  /vue-metamorph@2.0.5(eslint@8.56.0):
+    resolution: {integrity: sha512-HggS6Wjzz69tblt8+t9xMHo2cJwPKKdZsz1aYhwzwu1ZOZbpscAs8ZOOgTg6sM6Fk2SSHvPTCuDT9HqnmebvBg==}
     hasBin: true
     dependencies:
       '@babel/parser': 7.23.9
