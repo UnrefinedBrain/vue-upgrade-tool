@@ -43,7 +43,7 @@ It will upgrade JS/TS files, SFCs, and unit tests.
 | [vue-router instantiation changed (WIP)](./src/plugins/vue-router/instantiation.spec.ts) | codemod | [Link](https://router.vuejs.org/guide/migration/#new-Router-becomes-createRouter) |
 | [catch-all routes syntax changed](./src/plugins/vue-router/catch-all.spec.ts) | manual migration | [Link](https://router.vuejs.org/guide/migration/#Removed-star-or-catch-all-routes) |
 | `currentRoute.something` becomes `currentRoute.value.something` | codemod | [Link](https://router.vuejs.org/guide/migration/#Removed-star-or-catch-all-routes) |
-| `onReady` removed | codemod | [Link](https://router.vuejs.org/guide/migration/#Replaced-onReady-with-isReady) |
+| [`onReady` replaced with `isReady`](./src/plugins/vue-router/onReady.spec.ts) | codemod | [Link](https://router.vuejs.org/guide/migration/#Replaced-onReady-with-isReady) |
 | `append` prop in `router-link` removed | manual migration | [Link](https://router.vuejs.org/guide/migration/#Removal-of-append-prop-in-router-link-) |
 | `event` and `tag` props in `router-link` removed | manual migration | [Link](https://router.vuejs.org/guide/migration/#Removal-of-event-and-tag-props-in-router-link-) |
 | `exact` prop in `router-link` removed | codemod | [Link](https://router.vuejs.org/guide/migration/#Removal-of-the-exact-prop-in-router-link-) |
