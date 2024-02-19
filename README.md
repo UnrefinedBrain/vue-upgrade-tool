@@ -2,7 +2,10 @@
 
 WIP codemod built on vue-metamorph to upgrade Vue 2 projects to Vue 3.
 
-It will upgrade JS/TS files, SFCs, and unit tests. Results are not guaranteed to be perfect! There very well may be edge cases I missed. Please open an issue if you spot something it did wrong!
+It will upgrade JS/TS files, SFCs, and unit tests.
+
+> [!IMPORTANT]
+> Results are not guaranteed to be perfect! Please manually verify every single change this tool made. There very well may be edge cases I missed. Please open an issue if you spot something it did wrong!
 
 ## Vue
 
