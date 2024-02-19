@@ -16,23 +16,23 @@ It will upgrade JS/TS files, SFCs, and unit tests.
 
 | Plugin | Type | Link to migration guide |
 | - | - | - |
-| [`$children` removed](./src/plugins/vue/children.ts) | manual migration | [Link](https://v3-migration.vuejs.org/breaking-changes/children.html) |
-| [`data` option must return a function](./src/plugins/vue/data-function.ts) | codemod | [Link](https://v3-migration.vuejs.org/breaking-changes/data-option.html) |
-| [component options wrapped with `defineComponent()`](./src/plugins/vue/defineComponent.ts) | codemod | [Link](https://v3-migration.vuejs.org/breaking-changes/global-api.html#type-inference) |
-| [`Vue.delete()` / `this.$delete()` rewritten to `delete` expression](./src/plugins/vue/delete.ts) | codemod | [Link](https://v3-migration.vuejs.org/breaking-changes/#removed-apis) |
-| [remove `.native` modifier from v-on directives](./src/plugins/vue/event-listeners-native.ts) | codemod | [Link](https://v3-migration.vuejs.org/breaking-changes/v-on-native-modifier-removed.html) |
-| [warn on vue filter usage](./src/plugins/vue/filters.ts) | manual migration | [Link](https://v3-migration.vuejs.org/breaking-changes/filters.html) |
-| [remove functional component markers](./src/plugins/vue/functional-component.ts) | codemod | [Link](https://v3-migration.vuejs.org/breaking-changes/functional-components.html) |
-| [global application instance / app instantiation](./src/plugins/vue/global.ts) | manual migration | [Link](https://v3-migration.vuejs.org/breaking-changes/global-api.html) |
-| [render function h()](./src/plugins/vue/h.ts) | codemod | [Link](https://v3-migration.vuejs.org/breaking-changes/render-function-api.html) |
-| [`hook:` events renamed to `vue:`](./src/plugins/vue/hook-events.ts) | codemod | [Link](https://v3-migration.vuejs.org/breaking-changes/vnode-lifecycle-events.html) |
-| [`v-if` / `v-for` precedence changed](./src/plugins/vue/if-for-precedence.ts) | manual migration | [Link](https://v3-migration.vuejs.org/breaking-changes/v-if-v-for.html) |
-| [`$nextTick()`](./src/plugins/vue/nextTick.ts) | codemod | [Link](https://v3-migration.vuejs.org/breaking-changes/global-api-treeshaking.html#_3-x-syntax) |
-| [`$scopedSlots` removed](./src/plugins/vue/scopedSlots.ts) | codemod | [Link](https://v3-migration.vuejs.org/breaking-changes/slots-unification.html#slots-unification) |
-| [`Vue.set()` removed](./src/plugins/vue/set.ts) | codemod | [Link](https://v3-migration.vuejs.org/breaking-changes/#removed-apis) |
-| [`v-bind:foo.sync` becomes v-model:foo](./src/plugins/vue/v-bind-sync.ts) | codemod | [Link](https://v3-migration.vuejs.org/breaking-changes/v-model.html) |
-| [`$listeners` removed](./src/plugins/vue/listeners.ts) | codemod / manual migration | [Link](https://v3-migration.vuejs.org/breaking-changes/listeners-removed) |
-| [`destroyed` and `beforeDestroy` lifecycle hooks renamed](./src/plugins/vue/lifecycle-hooks.ts) | codemod | [Link](https://v3-migration.vuejs.org/breaking-changes/#other-minor-changes) |
+| [`$children` removed](./src/plugins/vue/children.spec.ts) | manual migration | [Link](https://v3-migration.vuejs.org/breaking-changes/children.html) |
+| [`data` option must return a function](./src/plugins/vue/data-function.spec.ts) | codemod | [Link](https://v3-migration.vuejs.org/breaking-changes/data-option.html) |
+| [component options wrapped with `defineComponent()`](./src/plugins/vue/defineComponent.spec.ts) | codemod | [Link](https://v3-migration.vuejs.org/breaking-changes/global-api.html#type-inference) |
+| [`Vue.delete()` / `this.$delete()` rewritten to `delete` expression](./src/plugins/vue/delete.spec.ts) | codemod | [Link](https://v3-migration.vuejs.org/breaking-changes/#removed-apis) |
+| [remove `.native` modifier from v-on directives](./src/plugins/vue/event-listeners-native.spec.ts) | codemod | [Link](https://v3-migration.vuejs.org/breaking-changes/v-on-native-modifier-removed.html) |
+| [warn on vue filter usage](./src/plugins/vue/filters.spec.ts) | manual migration | [Link](https://v3-migration.vuejs.org/breaking-changes/filters.html) |
+| [remove functional component markers](./src/plugins/vue/functional-component.spec.ts) | codemod | [Link](https://v3-migration.vuejs.org/breaking-changes/functional-components.html) |
+| [global application instance / app instantiation](./src/plugins/vue/global.spec.ts) | manual migration | [Link](https://v3-migration.vuejs.org/breaking-changes/global-api.html) |
+| [render function h()](./src/plugins/vue/h.spec.ts) | codemod | [Link](https://v3-migration.vuejs.org/breaking-changes/render-function-api.html) |
+| [`hook:` events renamed to `vue:`](./src/plugins/vue/hook-events.spec.ts) | codemod | [Link](https://v3-migration.vuejs.org/breaking-changes/vnode-lifecycle-events.html) |
+| [`v-if` / `v-for` precedence changed](./src/plugins/vue/if-for-precedence.spec.ts) | manual migration | [Link](https://v3-migration.vuejs.org/breaking-changes/v-if-v-for.html) |
+| [`$nextTick()`](./src/plugins/vue/nextTick.spec.ts) | codemod | [Link](https://v3-migration.vuejs.org/breaking-changes/global-api-treeshaking.html#_3-x-syntax) |
+| [`$scopedSlots` removed](./src/plugins/vue/scopedSlots.spec.ts) | codemod | [Link](https://v3-migration.vuejs.org/breaking-changes/slots-unification.html#slots-unification) |
+| [`Vue.set()` removed](./src/plugins/vue/set.spec.ts) | codemod | [Link](https://v3-migration.vuejs.org/breaking-changes/#removed-apis) |
+| [`v-bind:foo.sync` becomes v-model:foo](./src/plugins/vue/v-bind-sync.spec.ts) | codemod | [Link](https://v3-migration.vuejs.org/breaking-changes/v-model.html) |
+| [`$listeners` removed](./src/plugins/vue/listeners.spec.ts) | codemod / manual migration | [Link](https://v3-migration.vuejs.org/breaking-changes/listeners-removed) |
+| [`destroyed` and `beforeDestroy` lifecycle hooks renamed](./src/plugins/vue/lifecycle-hooks.spec.ts) | codemod | [Link](https://v3-migration.vuejs.org/breaking-changes/#other-minor-changes) |
 | v-model updates | codemod | [Link](https://v3-migration.vuejs.org/breaking-changes/v-model.html) |
 | `is` attribute can only be used on a `<component>` tag | manual migration | [Link](https://v3-migration.vuejs.org/breaking-changes/custom-elements-interop.html#customized-built-in-elements)
 
@@ -40,8 +40,8 @@ It will upgrade JS/TS files, SFCs, and unit tests.
 
 | Plugin | Type | Link to migration guide |
 | - | - | - |
-| [vue-router instantiation changed (WIP)](./src/plugins/vue-router/instantiation.ts) | codemod | [Link](https://router.vuejs.org/guide/migration/#new-Router-becomes-createRouter) |
-| [catch-all routes syntax changed](./src/plugins/vue-router/catch-all.ts) | manual migration | [Link](https://router.vuejs.org/guide/migration/#Removed-star-or-catch-all-routes) |
+| [vue-router instantiation changed (WIP)](./src/plugins/vue-router/instantiation.spec.ts) | codemod | [Link](https://router.vuejs.org/guide/migration/#new-Router-becomes-createRouter) |
+| [catch-all routes syntax changed](./src/plugins/vue-router/catch-all.spec.ts) | manual migration | [Link](https://router.vuejs.org/guide/migration/#Removed-star-or-catch-all-routes) |
 | `currentRoute.something` becomes `currentRoute.value.something` | codemod | [Link](https://router.vuejs.org/guide/migration/#Removed-star-or-catch-all-routes) |
 | `onReady` removed | codemod | [Link](https://router.vuejs.org/guide/migration/#Replaced-onReady-with-isReady) |
 | `append` prop in `router-link` removed | manual migration | [Link](https://router.vuejs.org/guide/migration/#Removal-of-append-prop-in-router-link-) |
@@ -57,7 +57,7 @@ It will upgrade JS/TS files, SFCs, and unit tests.
 
 | Plugin | Type | Link to migration guide |
 | - | - | - |
-| [Store instantiation changed](./src/plugins/vuex/instantiation.ts) | codemod | [Link](https://vuex.vuejs.org/guide/migrating-to-4-0-from-3-x.html#installation-process) |
+| [Store instantiation changed](./src/plugins/vuex/instantiation.spec.ts) | codemod | [Link](https://vuex.vuejs.org/guide/migrating-to-4-0-from-3-x.html#installation-process) |
 
 ## Vue Test Utils
 
