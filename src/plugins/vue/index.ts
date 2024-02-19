@@ -14,6 +14,7 @@ import { dataFunctionPlugin } from './data-function';
 import { ifForPrecedencePlugin } from './if-for-precedence';
 import { functionalComponentPlugin } from './functional-component';
 import { removeListenersCodemodPlugin, removeListenersManualMigrationPlugin } from './listeners';
+import { filtersPlugin } from './filters';
 
 export const vue = (): Plugin[] => ([
   vueSetPlugin,
@@ -33,4 +34,5 @@ export const vue = (): Plugin[] => ([
   functionalComponentPlugin,
   removeListenersCodemodPlugin,
   removeListenersManualMigrationPlugin,
+  filtersPlugin,
 ]);
