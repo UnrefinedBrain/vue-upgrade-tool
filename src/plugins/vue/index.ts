@@ -9,6 +9,7 @@ import { hookEventsPlugin } from './hook-events';
 import { vBindSyncPlugin } from './v-bind-sync';
 import { scopedSlotsPlugin } from './scopedSlots';
 import { nextTickPlugin } from './nextTick';
+import { lifecycleHookPlugin } from './lifecycle-hooks';
 
 export const vue = (): Plugin[] => ([
   vueSetPlugin,
@@ -22,4 +23,5 @@ export const vue = (): Plugin[] => ([
   vBindSyncPlugin,
   scopedSlotsPlugin,
   nextTickPlugin,
+  lifecycleHookPlugin,
 ]);
