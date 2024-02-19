@@ -7,6 +7,11 @@ It will upgrade JS/TS files, SFCs, and unit tests.
 > [!IMPORTANT]
 > Results are not guaranteed to be perfect! Please manually verify every single change this tool made. There very well may be edge cases I missed. Please open an issue if you spot something it did wrong!
 
+
+
+> [!NOTE]
+> vue-metamorph does not print well-formatted code when making changes. Use a formatting tool such as eslint or prettier to fix formatting in accordance with your project's code style conventions
+
 ## Vue
 
 | Plugin | Type | Link to migration guide |
