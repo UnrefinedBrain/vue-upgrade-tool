@@ -11,6 +11,7 @@ import { scopedSlotsPlugin } from './scopedSlots';
 import { nextTickPlugin } from './nextTick';
 import { lifecycleHookPlugin } from './lifecycle-hooks';
 import { dataFunctionPlugin } from './data-function';
+import { ifForPrecedencePlugin } from './if-for-precedence';
 
 export const vue = (): Plugin[] => ([
   vueSetPlugin,
@@ -26,4 +27,5 @@ export const vue = (): Plugin[] => ([
   nextTickPlugin,
   lifecycleHookPlugin,
   dataFunctionPlugin,
+  ifForPrecedencePlugin,
 ]);
