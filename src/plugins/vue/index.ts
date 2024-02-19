@@ -13,6 +13,7 @@ import { lifecycleHookPlugin } from './lifecycle-hooks';
 import { dataFunctionPlugin } from './data-function';
 import { ifForPrecedencePlugin } from './if-for-precedence';
 import { functionalComponentPlugin } from './functional-component';
+import { removeListenersCodemodPlugin, removeListenersManualMigrationPlugin } from './listeners';
 
 export const vue = (): Plugin[] => ([
   vueSetPlugin,
@@ -30,4 +31,6 @@ export const vue = (): Plugin[] => ([
   dataFunctionPlugin,
   ifForPrecedencePlugin,
   functionalComponentPlugin,
+  removeListenersCodemodPlugin,
+  removeListenersManualMigrationPlugin,
 ]);
