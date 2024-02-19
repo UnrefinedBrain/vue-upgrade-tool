@@ -31,7 +31,7 @@ It will upgrade JS/TS files, SFCs, and unit tests.
 | [`$scopedSlots` removed](./src/plugins/vue/scopedSlots.spec.ts) | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/slots-unification.html#slots-unification) |
 | [`Vue.set()` removed](./src/plugins/vue/set.spec.ts) | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/#removed-apis) |
 | [`v-bind:foo.sync` becomes v-model:foo](./src/plugins/vue/v-bind-sync.spec.ts) | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/v-model.html) |
-| [`$listeners` removed](./src/plugins/vue/listeners.spec.ts) | codemod / manual migration | [Link](https://v3-migration.vuejs.org/breaking-changes/listeners-removed) |
+| [`$listeners` removed](./src/plugins/vue/listeners.spec.ts) | automatic / manual | [Link](https://v3-migration.vuejs.org/breaking-changes/listeners-removed) |
 | [`destroyed` and `beforeDestroy` lifecycle hooks renamed](./src/plugins/vue/lifecycle-hooks.spec.ts) | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/#other-minor-changes) |
 | v-model updates | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/v-model.html) |
 | `is` attribute can only be used on a `<component>` tag | manual | [Link](https://v3-migration.vuejs.org/breaking-changes/custom-elements-interop.html#customized-built-in-elements)
