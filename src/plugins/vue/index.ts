@@ -12,6 +12,7 @@ import { nextTickPlugin } from './nextTick';
 import { lifecycleHookPlugin } from './lifecycle-hooks';
 import { dataFunctionPlugin } from './data-function';
 import { ifForPrecedencePlugin } from './if-for-precedence';
+import { functionalComponentPlugin } from './functional-component';
 
 export const vue = (): Plugin[] => ([
   vueSetPlugin,
@@ -28,4 +29,5 @@ export const vue = (): Plugin[] => ([
   lifecycleHookPlugin,
   dataFunctionPlugin,
   ifForPrecedencePlugin,
+  functionalComponentPlugin,
 ]);
