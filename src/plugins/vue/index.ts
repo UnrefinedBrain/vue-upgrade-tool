@@ -10,6 +10,7 @@ import { vBindSyncPlugin } from './v-bind-sync';
 import { scopedSlotsPlugin } from './scopedSlots';
 import { nextTickPlugin } from './nextTick';
 import { lifecycleHookPlugin } from './lifecycle-hooks';
+import { dataFunctionPlugin } from './data-function';
 
 export const vue = (): Plugin[] => ([
   vueSetPlugin,
@@ -24,4 +25,5 @@ export const vue = (): Plugin[] => ([
   scopedSlotsPlugin,
   nextTickPlugin,
   lifecycleHookPlugin,
+  dataFunctionPlugin,
 ]);
