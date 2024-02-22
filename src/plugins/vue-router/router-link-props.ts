@@ -9,7 +9,7 @@ export const routerLinkPropsPlugin: ManualMigrationPlugin = {
       traverseTemplateAST(sfcAST, {
         enterNode(node) {
           if (node.type === 'VElement'
-            && changeCase.pascalCase(node.name) === 'RouterLink') {
+            && changeCase.pascalCase(node.rawName) === 'RouterLink') {
             for (const attr of node.startTag.attributes) {
               if (attr.directive
                 && (attr.key.name.name !== 'bind' || !attr.key.argument || attr.key.argument.type !== 'VIdentifier')
@@ -31,6 +31,10 @@ export const routerLinkPropsPlugin: ManualMigrationPlugin = {
 
               if (name === 'tag') {
                 report(attr, 'The \'tag\' attribute was removed from router-link\nSee: https://router.vuejs.org/guide/migration/#Removal-of-event-and-tag-props-in-router-link-');
+              }
+
+              if (name === 'exact') {
+                report(attr, 'The \'exact\' attribute was removed from router-link\nSee: https://router.vuejs.org/guide/migration/#Removal-of-the-exact-prop-in-router-link-');
               }
             }
           }
