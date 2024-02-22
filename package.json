@@ -17,6 +17,7 @@
   },
   "scripts": {
     "build": "tsc && vite build && chmod +x dist/cli.js",
+    "lint": "eslint .",
     "test": "vitest"
   },
   "files": [
