@@ -55,7 +55,7 @@ It will upgrade JS/TS files, SFCs, and unit tests.
 
 ## Vuex
 
-| Plugin | Type | Link to migration guide |
+| Plugin | Type | Migration Guide |
 | - | - | - |
 | [Store instantiation changed](./src/plugins/vuex/instantiation.spec.ts) | automatic | [Link](https://vuex.vuejs.org/guide/migrating-to-4-0-from-3-x.html#installation-process) |
 
