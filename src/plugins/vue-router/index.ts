@@ -5,6 +5,7 @@ import { onReadyPlugin } from './onReady';
 import { routerLinkPropsPlugin } from './router-link-props';
 import { getMatchedComponentsPlugin } from './getMatchedComponents';
 import { routerAppPlugin } from './router-app';
+import { routerViewSlotContentPlugin } from './router-view-slot-content';
 
 export const vueRouter = (): Plugin[] => ([
   vueRouterInstantiationPlugin,
@@ -13,4 +14,5 @@ export const vueRouter = (): Plugin[] => ([
   routerLinkPropsPlugin,
   getMatchedComponentsPlugin,
   routerAppPlugin,
+  routerViewSlotContentPlugin,
 ]);
