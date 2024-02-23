@@ -18,7 +18,9 @@ export const createLocalVuePlugin: ManualMigrationPlugin = {
           name: 'localVue',
         })
         .forEach((node) => {
-          report(node, message);
+          if (node.loc) {
+            report(node, message);
+          }
         });
 
       astHelpers
