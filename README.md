@@ -65,7 +65,7 @@ It will upgrade JS/TS files, SFCs, and unit tests.
 | - | - | - |
 | [`propsData` mount option renamed to `props`](./src/plugins/vue-test-utils/propsData.spec.ts) | automatic | [Link](https://test-utils.vuejs.org/migration/#propsData-is-now-props) |
 | new `global` mount option | automatic | [Link](https://test-utils.vuejs.org/migration/#mocks-and-stubs-are-now-in-global) |
-| `createLocalVue` removed | automatic | [Link](https://test-utils.vuejs.org/migration/#No-more-createLocalVue) |
+| [`createLocalVue` removed](./src/plugins/vue-test-utils/createLocalVue.spec.ts) | manual | [Link](https://test-utils.vuejs.org/migration/#No-more-createLocalVue) |
 | shallowMount no longer renders default slot | automatic | [Link](https://test-utils.vuejs.org/migration/#shallowMount-and-renderStubDefaultSlot) |
 | `wrapper.destroy()` renamed to `wrapper.unmount()` | automatic | [Link](https://test-utils.vuejs.org/migration/#destroy-is-now-unmount-to-match-Vue-3) |
 | `scopedSlots` option merged with `slots` | automatic | [Link](https://test-utils.vuejs.org/migration/#scopedSlots-is-now-merged-with-slots) |
