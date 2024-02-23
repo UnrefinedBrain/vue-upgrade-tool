@@ -1,12 +1,17 @@
 import { CodemodPlugin, ManualMigrationPlugin } from 'vue-metamorph';
+import { isTestFile } from './utils';
 
 export const wrapperDestroyCodemodPlugin: CodemodPlugin = {
   type: 'codemod',
   name: 'wrapper-destroy',
   transform(scriptASTs, _sfcAst, filename, utils) {
+    if (!isTestFile(filename)) {
+      return 0;
+    }
+
     let count = 0;
 
-    if (scriptASTs[0] && (filename.includes('.spec') || filename.includes('.test'))) {
+    if (scriptASTs[0]) {
       utils.astHelpers.findAll(scriptASTs[0], {
         type: 'CallExpression',
         callee: {
@@ -38,7 +43,11 @@ export const wrapperDestroyManualMigrationPlugin: ManualMigrationPlugin = {
   type: 'manual',
   name: 'wrapper-destroy-manual',
   find(scriptASTs, _sfcAST, filename, report, utils) {
-    if (scriptASTs[0] && (filename.includes('.spec') || filename.includes('.test'))) {
+    if (!isTestFile(filename)) {
+      return;
+    }
+
+    if (scriptASTs[0]) {
       utils.astHelpers.findAll(scriptASTs[0], {
         type: 'CallExpression',
         callee: {
