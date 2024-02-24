@@ -38,7 +38,6 @@ export const getMatchedComponentsPlugin: CodemodPlugin = {
   name: 'getMatchedComponents',
   transform(scriptASTs, _sfcAST, _filename, { traverseScriptAST }) {
     let count = 0;
-    count++;
 
     for (const scriptAST of scriptASTs) {
       traverseScriptAST(scriptAST, {

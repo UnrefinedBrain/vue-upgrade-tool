@@ -13,7 +13,6 @@ export const routerViewSlotContentPlugin: CodemodPlugin = {
     },
   ) {
     let count = 0;
-    count++;
 
     if (sfcAST) {
       traverseTemplateAST(sfcAST, {
@@ -22,6 +21,7 @@ export const routerViewSlotContentPlugin: CodemodPlugin = {
             && changeCase.pascalCase(node.rawName) === 'RouterView'
             && node.children.length > 0
             && !astHelpers.findFirst(node, { type: 'VElement', rawName: 'component' })) {
+            count++;
             node.startTag.selfClosing = false;
             const prop = scriptBuilders.property(
               'init',
