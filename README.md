@@ -67,6 +67,6 @@ It will upgrade JS/TS files, SFCs, and unit tests.
 | new `global` mount option | automatic | [Link](https://test-utils.vuejs.org/migration/#mocks-and-stubs-are-now-in-global) |
 | [`createLocalVue` removed](./src/plugins/vue-test-utils/createLocalVue.spec.ts) | manual | [Link](https://test-utils.vuejs.org/migration/#No-more-createLocalVue) |
 | shallowMount no longer renders default slot | automatic | [Link](https://test-utils.vuejs.org/migration/#shallowMount-and-renderStubDefaultSlot) |
-| `wrapper.destroy()` renamed to `wrapper.unmount()` | automatic | [Link](https://test-utils.vuejs.org/migration/#destroy-is-now-unmount-to-match-Vue-3) |
+| [`wrapper.destroy()` renamed to `wrapper.unmount()`](./src/plugins/vue-test-utils/wrapperDestroy.spec.ts) | automatic | [Link](https://test-utils.vuejs.org/migration/#destroy-is-now-unmount-to-match-Vue-3) |
 | `scopedSlots` option merged with `slots` | automatic | [Link](https://test-utils.vuejs.org/migration/#scopedSlots-is-now-merged-with-slots) |
 | [Wrapper APIs removed](./src/plugins/vue-test-utils/wrapperDestroy.spec.ts) | manual | [Link](https://test-utils.vuejs.org/migration/#Wrapper-API-mount-) |
