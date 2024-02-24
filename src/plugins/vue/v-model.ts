@@ -104,7 +104,7 @@ export const vModelPlugin: CodemodPlugin = {
         }],
       }).forEach((node) => {
         if (node.arguments[0]?.type === 'Literal') {
-          node.arguments[0].value = 'update:modalValue';
+          node.arguments[0].value = 'update:modelValue';
           count++;
         }
       });

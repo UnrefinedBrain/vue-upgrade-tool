@@ -74,7 +74,7 @@ export default {
     export default {
       methods: {
         log() {
-          this.$emit('update:modalValue', 5);
+          this.$emit('update:modelValue', 5);
         },
       },
     };
