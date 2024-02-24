@@ -17,6 +17,7 @@ import { removeListenersCodemodPlugin, removeListenersManualMigrationPlugin } fr
 import { filtersPlugin } from './filters';
 import { childrenPlugin } from './children';
 import { propsDefaultThisPlugin } from './props-default-this';
+import { vModelPlugin } from './v-model';
 
 export const vue = (): Plugin[] => ([
   vueSetPlugin,
@@ -39,4 +40,5 @@ export const vue = (): Plugin[] => ([
   filtersPlugin,
   childrenPlugin,
   propsDefaultThisPlugin,
+  vModelPlugin,
 ]);

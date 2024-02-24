@@ -33,7 +33,7 @@ It will upgrade JS/TS files, SFCs, and unit tests.
 | [`v-bind:foo.sync` becomes v-model:foo](./src/plugins/vue/v-bind-sync.spec.ts) | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/v-model.html) |
 | [`$listeners` removed](./src/plugins/vue/listeners.spec.ts) | automatic / manual | [Link](https://v3-migration.vuejs.org/breaking-changes/listeners-removed) |
 | [`destroyed` and `beforeDestroy` lifecycle hooks renamed](./src/plugins/vue/lifecycle-hooks.spec.ts) | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/#other-minor-changes) |
-| v-model updates | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/v-model.html) |
+| [v-model updates](./src/plugins/vue/v-model.spec.ts) | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/v-model.html) |
 | `is` attribute can only be used on a `<component>` tag | manual | [Link](https://v3-migration.vuejs.org/breaking-changes/custom-elements-interop.html#customized-built-in-elements)
 
 ## Vue Router
