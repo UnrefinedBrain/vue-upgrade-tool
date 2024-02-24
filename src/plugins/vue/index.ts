@@ -18,6 +18,7 @@ import { filtersPlugin } from './filters';
 import { childrenPlugin } from './children';
 import { propsDefaultThisPlugin } from './props-default-this';
 import { vModelPlugin } from './v-model';
+import { isAttributePlugin } from './is-attribute';
 
 export const vue = (): Plugin[] => ([
   vueSetPlugin,
@@ -41,4 +42,5 @@ export const vue = (): Plugin[] => ([
   childrenPlugin,
   propsDefaultThisPlugin,
   vModelPlugin,
+  isAttributePlugin,
 ]);
