@@ -3,6 +3,7 @@ import { wrapperDestroyCodemodPlugin, wrapperDestroyManualMigrationPlugin } from
 import { propsDataTestPlugin } from './propsData';
 import { createLocalVuePlugin } from './createLocalVue';
 import { removedWrapperApisPlugin } from './removed-wrapper-apis';
+import { scopedSlotsMountPlugin } from './scopedSlots';
 
 export const vueTestUtils = (): Plugin[] => ([
   wrapperDestroyCodemodPlugin,
@@ -10,4 +11,5 @@ export const vueTestUtils = (): Plugin[] => ([
   propsDataTestPlugin,
   createLocalVuePlugin,
   removedWrapperApisPlugin,
+  scopedSlotsMountPlugin,
 ]);
