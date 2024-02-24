@@ -6,6 +6,7 @@ import { routerLinkPropsPlugin } from './router-link-props';
 import { getMatchedComponentsPlugin } from './getMatchedComponents';
 import { routerAppPlugin } from './router-app';
 import { routerViewSlotContentPlugin } from './router-view-slot-content';
+import { routerMatchPlugin } from './router-match';
 
 export const vueRouter = (): Plugin[] => ([
   vueRouterInstantiationPlugin,
@@ -15,4 +16,5 @@ export const vueRouter = (): Plugin[] => ([
   getMatchedComponentsPlugin,
   routerAppPlugin,
   routerViewSlotContentPlugin,
+  routerMatchPlugin,
 ]);

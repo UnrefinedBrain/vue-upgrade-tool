@@ -47,7 +47,7 @@ It will upgrade JS/TS files, SFCs, and unit tests.
 | [`append` prop in `router-link` removed](./src/plugins/vue-router/router-link-props.spec.ts) | manual | [Link](https://router.vuejs.org/guide/migration/#Removal-of-append-prop-in-router-link-) |
 | [`event` and `tag` props in `router-link` removed](./src/plugins/vue-router/router-link-props.spec.ts) | manual | [Link](https://router.vuejs.org/guide/migration/#Removal-of-event-and-tag-props-in-router-link-) |
 | [`exact` prop in `router-link` removed](./src/plugins/vue-router/router-link-props.spec.ts) | manual | [Link](https://router.vuejs.org/guide/migration/#Removal-of-the-exact-prop-in-router-link-) |
-| `router.match()` removed | manual | [Link](https://router.vuejs.org/guide/migration/#Removal-of-router-match-and-changes-to-router-resolve) |
+| [`router.match()` removed](./src/plugins/vue-router/router-match.spec.ts) | manual | [Link](https://router.vuejs.org/guide/migration/#Removal-of-router-match-and-changes-to-router-resolve) |
 | [`router.getMatchedComponents()` removed](./src/plugins/vue-router/getMatchedComponents.spec.ts) | automatic | [Link](https://router.vuejs.org/guide/migration/#Removal-of-router-getMatchedComponents-) |
 | [`router.app` removed](./src/plugins/vue-router/router-app.spec.ts) | manual | [Link](https://router.vuejs.org/guide/migration/#Removal-of-router-app) |
 | [passing slot content to `router-view`](./src/plugins/vue-router/router-view-slot-content.spec.ts) | automatic | [Link](https://router.vuejs.org/guide/migration/#Passing-content-to-route-components-slot-) |
