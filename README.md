@@ -5,7 +5,7 @@ WIP codemod built on [vue-metamorph](https://github.com/UnrefinedBrain/vue-metam
 It will upgrade JS/TS files, SFCs, and unit tests.
 
 > [!IMPORTANT]
-> Results are not guaranteed to be perfect! Please manually verify every single change this tool made. There are probably edge cases I missed here. Please open an issue if you spot something it did wrong, or if it should have transformed/reported on something and didn't!
+> Results are not guaranteed to be perfect! You should manually verify every single change this tool made. There are probably edge cases I missed here. Please [open a GitHub Issue](https://github.com/UnrefinedBrain/vue-upgrade-tool/issues/new) if you spot something it did wrong, or if it should have transformed/reported on something and didn't!
 
 
 
