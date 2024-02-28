@@ -4,6 +4,12 @@ import { defineComponentPlugin } from './defineComponent';
 
 it('should update SFC options to use defineComponent', () => {
   const input = `
+<template>
+  <div>
+    Foo bar baz
+  </div>
+</template>
+
 <script>
 export default {
   computed: {
@@ -21,6 +27,12 @@ export default {
 
   expect(transform(input, 'file.vue', [defineComponentPlugin]).code).toMatchInlineSnapshot(`
     "
+    <template>
+      <div>
+        Foo bar baz
+      </div>
+    </template>
+
     <script>
     import { defineComponent } from 'vue';
 
