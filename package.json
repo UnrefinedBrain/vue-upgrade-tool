@@ -6,6 +6,7 @@
   "bin": {
     "vue-upgrade-tool": "dist/cli.js"
   },
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/UnrefinedBrain/vue-upgrade-tool.git"
