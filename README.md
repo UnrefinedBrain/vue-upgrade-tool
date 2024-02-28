@@ -44,6 +44,8 @@ npx vue-upgrade-tool --files 'src/**/*' > vue_upgrade_output
 | [`destroyed` and `beforeDestroy` lifecycle hooks renamed](./src/plugins/vue/lifecycle-hooks.spec.ts) | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/#other-minor-changes) |
 | [v-model updates](./src/plugins/vue/v-model.spec.ts) | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/v-model.html) |
 | [`is` attribute can only be used on a `<component>` tag](./src/plugins/vue/is-attribute.spec.ts) | manual | [Link](https://v3-migration.vuejs.org/breaking-changes/custom-elements-interop.html#customized-built-in-elements)
+| [`transition-group` no longer renders a root element](./src/plugins/vue/transition-group-root-element.spec.ts) | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/transition-group.html#frontmatter-title) |
+| [`transition` props were renamed](./src/plugins/vue/transition-props.spec.ts) | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/transition.html#_3-x-update) |
 
 ## Vue Router
 
