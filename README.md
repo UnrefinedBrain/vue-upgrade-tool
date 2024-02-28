@@ -12,6 +12,15 @@ It will upgrade JS/TS files, SFCs, and unit tests.
 > [!NOTE]
 > vue-metamorph does not print well-formatted code when making changes. Use a formatting tool such as eslint or prettier to fix formatting in accordance with your project's code style conventions
 
+
+## Usage
+
+Since the list of manual migrations can be large depending on your project, it's recommended to pipe the output into a file.
+
+```sh
+npx vue-upgrade-tool --files 'src/**/*' > vue_upgrade_output
+```
+
 ## Vue
 
 | Plugin | Migration Type | Migration Guide |
