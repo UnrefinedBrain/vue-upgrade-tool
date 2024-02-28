@@ -4,6 +4,7 @@ import { propsDataTestPlugin } from './propsData';
 import { createLocalVuePlugin } from './createLocalVue';
 import { removedWrapperApisPlugin } from './removed-wrapper-apis';
 import { scopedSlotsMountPlugin } from './scopedSlots';
+import { globalMountOptionsPlugin } from './global-mount-options';
 
 export const vueTestUtils = (): Plugin[] => ([
   wrapperDestroyCodemodPlugin,
@@ -12,4 +13,5 @@ export const vueTestUtils = (): Plugin[] => ([
   createLocalVuePlugin,
   removedWrapperApisPlugin,
   scopedSlotsMountPlugin,
+  globalMountOptionsPlugin,
 ]);
