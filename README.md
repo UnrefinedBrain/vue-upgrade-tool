@@ -1,6 +1,11 @@
 # vue-upgrade-tool
 
-WIP codemod built on [vue-metamorph](https://github.com/UnrefinedBrain/vue-metamorph) to upgrade Vue 2 projects to Vue 3.
+
+[![NPM License](https://img.shields.io/npm/l/vue-upgrade-tool)](https://github.com/UnrefinedBrain/vue-upgrade-tool/blob/master/LICENSE) [![NPM Version](https://img.shields.io/npm/v/vue-upgrade-tool)](https://npmjs.com/package/vue-upgrade-tool)
+ [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/UnrefinedBrain/vue-upgrade-tool/ci.yml)](https://github.com/UnrefinedBrain/vue-upgrade-tool/actions)
+
+
+A codemod built on [vue-metamorph](https://github.com/UnrefinedBrain/vue-metamorph) to upgrade Vue 2 projects to Vue 3.
 
 It will upgrade JS/TS files, SFCs, and unit tests.
 
