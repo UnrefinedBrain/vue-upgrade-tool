@@ -21,8 +21,7 @@
     "test": "vitest"
   },
   "files": [
-    "dist",
-    "README.md"
+    "dist"
   ],
   "dependencies": {
     "change-case": "^5.4.3",
