@@ -25,17 +25,13 @@ npx vue-upgrade-tool --files 'src/**/*' > vue_upgrade_output
 
 | Plugin | Migration Type | Migration Guide |
 | - | - | - |
-| [`$children` removed](./src/plugins/vue/children.spec.ts) | manual | [Link](https://v3-migration.vuejs.org/breaking-changes/children.html) |
 | [`data` option must return a function](./src/plugins/vue/data-function.spec.ts) | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/data-option.html) |
 | [component options wrapped with `defineComponent()`](./src/plugins/vue/defineComponent.spec.ts) | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/global-api.html#type-inference) |
 | [`Vue.delete()` / `this.$delete()` rewritten to `delete` expression](./src/plugins/vue/delete.spec.ts) | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/#removed-apis) |
 | [remove `.native` modifier from v-on directives](./src/plugins/vue/event-listeners-native.spec.ts) | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/v-on-native-modifier-removed.html) |
-| [warn on vue filter usage](./src/plugins/vue/filters.spec.ts) | manual | [Link](https://v3-migration.vuejs.org/breaking-changes/filters.html) |
 | [remove functional component markers](./src/plugins/vue/functional-component.spec.ts) | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/functional-components.html) |
-| [global application instance / app instantiation](./src/plugins/vue/global.spec.ts) | manual | [Link](https://v3-migration.vuejs.org/breaking-changes/global-api.html) |
 | [render function h()](./src/plugins/vue/h.spec.ts) | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/render-function-api.html) |
 | [`hook:` events renamed to `vue:`](./src/plugins/vue/hook-events.spec.ts) | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/vnode-lifecycle-events.html) |
-| [`v-if` / `v-for` precedence changed](./src/plugins/vue/if-for-precedence.spec.ts) | manual | [Link](https://v3-migration.vuejs.org/breaking-changes/v-if-v-for.html) |
 | [`$nextTick()`](./src/plugins/vue/nextTick.spec.ts) | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/global-api-treeshaking.html#_3-x-syntax) |
 | [`$scopedSlots` removed](./src/plugins/vue/scopedSlots.spec.ts) | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/slots-unification.html#slots-unification) |
 | [`Vue.set()` removed](./src/plugins/vue/set.spec.ts) | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/#removed-apis) |
@@ -43,26 +39,30 @@ npx vue-upgrade-tool --files 'src/**/*' > vue_upgrade_output
 | [`$listeners` removed](./src/plugins/vue/listeners.spec.ts) | automatic / manual | [Link](https://v3-migration.vuejs.org/breaking-changes/listeners-removed) |
 | [`destroyed` and `beforeDestroy` lifecycle hooks renamed](./src/plugins/vue/lifecycle-hooks.spec.ts) | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/#other-minor-changes) |
 | [v-model updates](./src/plugins/vue/v-model.spec.ts) | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/v-model.html) |
-| [`is` attribute can only be used on a `<component>` tag](./src/plugins/vue/is-attribute.spec.ts) | manual | [Link](https://v3-migration.vuejs.org/breaking-changes/custom-elements-interop.html#customized-built-in-elements)
 | [`transition-group` no longer renders a root element](./src/plugins/vue/transition-group-root-element.spec.ts) | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/transition-group.html#frontmatter-title) |
 | [`transition` props were renamed](./src/plugins/vue/transition-props.spec.ts) | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/transition.html#_3-x-update) |
+| [`is` attribute can only be used on a `<component>` tag](./src/plugins/vue/is-attribute.spec.ts) | manual | [Link](https://v3-migration.vuejs.org/breaking-changes/custom-elements-interop.html#customized-built-in-elements) |
+| [`$children` removed](./src/plugins/vue/children.spec.ts) | manual | [Link](https://v3-migration.vuejs.org/breaking-changes/children.html) |
+| [`v-if` / `v-for` precedence changed](./src/plugins/vue/if-for-precedence.spec.ts) | manual | [Link](https://v3-migration.vuejs.org/breaking-changes/v-if-v-for.html) |
+| [vue filters removed](./src/plugins/vue/filters.spec.ts) | manual | [Link](https://v3-migration.vuejs.org/breaking-changes/filters.html) |
+| [global application instance / app instantiation](./src/plugins/vue/global.spec.ts) | manual | [Link](https://v3-migration.vuejs.org/breaking-changes/global-api.html) |
 
 ## Vue Router
 
 | Plugin | Migration Type | Migration Guide |
 | - | - | - |
 | [vue-router instantiation changed (WIP)](./src/plugins/vue-router/instantiation.spec.ts) | automatic | [Link](https://router.vuejs.org/guide/migration/#new-Router-becomes-createRouter) |
-| [catch-all routes syntax changed](./src/plugins/vue-router/catch-all.spec.ts) | manual | [Link](https://router.vuejs.org/guide/migration/#Removed-star-or-catch-all-routes) |
 | `currentRoute.something` becomes `currentRoute.value.something` | automatic | [Link](https://router.vuejs.org/guide/migration/#Removed-star-or-catch-all-routes) |
 | [`onReady` replaced with `isReady`](./src/plugins/vue-router/onReady.spec.ts) | automatic | [Link](https://router.vuejs.org/guide/migration/#Replaced-onReady-with-isReady) |
+| [`router.getMatchedComponents()` removed](./src/plugins/vue-router/getMatchedComponents.spec.ts) | automatic | [Link](https://router.vuejs.org/guide/migration/#Removal-of-router-getMatchedComponents-) |
+| [passing slot content to `router-view`](./src/plugins/vue-router/router-view-slot-content.spec.ts) | automatic | [Link](https://router.vuejs.org/guide/migration/#Passing-content-to-route-components-slot-) |
+| `RouteConfig`, `Location`, `Route` types renamed | automatic | [Link](https://router.vuejs.org/guide/migration/#TypeScript-changes) |
+| [`router.app` removed](./src/plugins/vue-router/router-app.spec.ts) | manual | [Link](https://router.vuejs.org/guide/migration/#Removal-of-router-app) |
+| [catch-all routes syntax changed](./src/plugins/vue-router/catch-all.spec.ts) | manual | [Link](https://router.vuejs.org/guide/migration/#Removed-star-or-catch-all-routes) |
 | [`append` prop in `router-link` removed](./src/plugins/vue-router/router-link-props.spec.ts) | manual | [Link](https://router.vuejs.org/guide/migration/#Removal-of-append-prop-in-router-link-) |
 | [`event` and `tag` props in `router-link` removed](./src/plugins/vue-router/router-link-props.spec.ts) | manual | [Link](https://router.vuejs.org/guide/migration/#Removal-of-event-and-tag-props-in-router-link-) |
 | [`exact` prop in `router-link` removed](./src/plugins/vue-router/router-link-props.spec.ts) | manual | [Link](https://router.vuejs.org/guide/migration/#Removal-of-the-exact-prop-in-router-link-) |
 | [`router.match()` removed](./src/plugins/vue-router/router-match.spec.ts) | manual | [Link](https://router.vuejs.org/guide/migration/#Removal-of-router-match-and-changes-to-router-resolve) |
-| [`router.getMatchedComponents()` removed](./src/plugins/vue-router/getMatchedComponents.spec.ts) | automatic | [Link](https://router.vuejs.org/guide/migration/#Removal-of-router-getMatchedComponents-) |
-| [`router.app` removed](./src/plugins/vue-router/router-app.spec.ts) | manual | [Link](https://router.vuejs.org/guide/migration/#Removal-of-router-app) |
-| [passing slot content to `router-view`](./src/plugins/vue-router/router-view-slot-content.spec.ts) | automatic | [Link](https://router.vuejs.org/guide/migration/#Passing-content-to-route-components-slot-) |
-| `RouteConfig`, `Location`, `Route` types renamed | automatic | [Link](https://router.vuejs.org/guide/migration/#TypeScript-changes) |
 
 ## Vuex
 
@@ -76,7 +76,7 @@ npx vue-upgrade-tool --files 'src/**/*' > vue_upgrade_output
 | - | - | - |
 | [`propsData` mount option renamed to `props`](./src/plugins/vue-test-utils/propsData.spec.ts) | automatic | [Link](https://test-utils.vuejs.org/migration/#propsData-is-now-props) |
 | [new `global` mount option](./src/plugins/vue-test-utils/global-mount-options.spec.ts) | automatic | [Link](https://test-utils.vuejs.org/migration/#mocks-and-stubs-are-now-in-global) |
-| [`createLocalVue` removed](./src/plugins/vue-test-utils/createLocalVue.spec.ts) | manual | [Link](https://test-utils.vuejs.org/migration/#No-more-createLocalVue) |
 | [`wrapper.destroy()` renamed to `wrapper.unmount()`](./src/plugins/vue-test-utils/wrapperDestroy.spec.ts) | automatic | [Link](https://test-utils.vuejs.org/migration/#destroy-is-now-unmount-to-match-Vue-3) |
 | [`scopedSlots` option merged with `slots`](./src/plugins/vue-test-utils/scopedSlots.spec.ts) | automatic | [Link](https://test-utils.vuejs.org/migration/#scopedSlots-is-now-merged-with-slots) |
+| [`createLocalVue` removed](./src/plugins/vue-test-utils/createLocalVue.spec.ts) | automatic / manual | [Link](https://test-utils.vuejs.org/migration/#No-more-createLocalVue) |
 | [Wrapper APIs removed](./src/plugins/vue-test-utils/wrapperDestroy.spec.ts) | manual | [Link](https://test-utils.vuejs.org/migration/#Wrapper-API-mount-) |
