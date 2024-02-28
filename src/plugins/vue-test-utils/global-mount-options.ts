@@ -14,9 +14,6 @@ const getGlobalObject = (node: namedTypes.ObjectExpression) => {
   }
 
   const value = scriptBuilders.objectExpression([]);
-  const prop = scriptBuilders.property('init', scriptBuilders.identifier('global'), value);
-
-  node.properties.push(prop);
 
   return value;
 };
@@ -196,6 +193,11 @@ export const globalMountOptionsPlugin: CodemodPlugin = {
 
         if (stubs) {
           globalObject.properties.push(stubs);
+        }
+
+        if (globalObject.properties.length > 0) {
+          const prop = scriptBuilders.property('init', scriptBuilders.identifier('global'), globalObject);
+          mount.properties.push(prop);
         }
       }
 
