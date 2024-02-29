@@ -84,4 +84,4 @@ npx vue-upgrade-tool --files 'src/**/*' > vue_upgrade_output
 | [`wrapper.destroy()` renamed to `wrapper.unmount()`](./src/plugins/vue-test-utils/wrapperDestroy.spec.ts) | automatic | [Link](https://test-utils.vuejs.org/migration/#destroy-is-now-unmount-to-match-Vue-3) |
 | [`scopedSlots` option merged with `slots`](./src/plugins/vue-test-utils/scopedSlots.spec.ts) | automatic | [Link](https://test-utils.vuejs.org/migration/#scopedSlots-is-now-merged-with-slots) |
 | [`createLocalVue` removed](./src/plugins/vue-test-utils/createLocalVue.spec.ts) | automatic / manual | [Link](https://test-utils.vuejs.org/migration/#No-more-createLocalVue) |
-| [Wrapper APIs removed](./src/plugins/vue-test-utils/wrapperDestroy.spec.ts) | manual | [Link](https://test-utils.vuejs.org/migration/#Wrapper-API-mount-) |
+| [Wrapper APIs removed](./src/plugins/vue-test-utils/removed-wrapper-apis.spec.ts) | manual | [Link](https://test-utils.vuejs.org/migration/#Wrapper-API-mount-) |
