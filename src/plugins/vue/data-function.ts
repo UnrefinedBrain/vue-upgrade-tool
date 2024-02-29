@@ -3,7 +3,7 @@ import { CodemodPlugin } from 'vue-metamorph';
 export const dataFunctionPlugin: CodemodPlugin = {
   type: 'codemod',
   name: 'data-function',
-  transform(scriptASTs, _sfcAST, filename, { traverseScriptAST, scriptBuilders }) {
+  transform(scriptASTs, _sfcAST, _filename, { traverseScriptAST, scriptBuilders }) {
     let count = 0;
 
     for (const scriptAST of scriptASTs) {
