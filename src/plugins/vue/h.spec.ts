@@ -29,6 +29,18 @@ const withIrregularNameArrow = {
     return createElement('div');
   },
 };
+
+const withCreateElement = {
+  render() {
+    return this.$createElement('div');
+  },
+
+  methods: {
+    createDiv() {
+      return this.$createElement('div');
+    }
+  }
+};
 `;
 
   expect(transform(input, 'file.js', [contextualHPlugin]).code).toMatchInlineSnapshot(`
@@ -56,6 +68,18 @@ const withIrregularNameArrow = {
       render: () => {
         return h('div');
       },
+    };
+
+    const withCreateElement = {
+      render() {
+        return h('div');
+      },
+
+      methods: {
+        createDiv() {
+          return h('div');
+        }
+      }
     };
     "
   `);

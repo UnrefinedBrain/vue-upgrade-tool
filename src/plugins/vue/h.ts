@@ -15,22 +15,36 @@ export const contextualHPlugin: CodemodPlugin = {
 
       // find render functions
       utils.traverseScriptAST(scriptAST, {
+        visitCallExpression(path) {
+          if (path.node.callee.type === 'MemberExpression'
+            && path.node.callee.object.type === 'ThisExpression'
+            && path.node.callee.property.type === 'Identifier'
+            && path.node.callee.property.name === '$createElement') {
+            addImport = true;
+            count++;
+            path.node.callee = utils.scriptBuilders.identifier('h');
+          }
+
+          this.traverse(path);
+        },
+
         visitProperty(path) {
           if (path.node.key.type === 'Identifier'
             && path.node.key.name === 'render'
-            && (path.node.value.type === 'FunctionExpression' || path.node.value.type === 'ArrowFunctionExpression')
-            && path.node.value.params[0]?.type === 'Identifier') {
-            const paramName = path.node.value.params[0].name;
-            if (paramName !== 'h') {
-              renames.push({
-                node: path.node.value,
-                name: paramName,
-              });
-            }
+            && (path.node.value.type === 'FunctionExpression' || path.node.value.type === 'ArrowFunctionExpression')) {
+            if (path.node.value.params[0]?.type === 'Identifier') {
+              const paramName = path.node.value.params[0].name;
+              if (paramName !== 'h') {
+                renames.push({
+                  node: path.node.value,
+                  name: paramName,
+                });
+              }
 
-            addImport = true;
-            path.node.value.params = [];
-            count++;
+              addImport = true;
+              path.node.value.params = [];
+              count++;
+            }
           }
 
           this.traverse(path);
