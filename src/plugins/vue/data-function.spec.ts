@@ -4,26 +4,21 @@ import { dataFunctionPlugin } from './data-function';
 
 it('should transform a data object', () => {
   const input = `
-<script>
-export default {
+export default new Vue({
   data: {
     foo: 1,
     bar: 2,
   },
-}
-</script>
+})
 `;
 
-  expect(transform(input, 'file.vue', [dataFunctionPlugin]).code).toMatchInlineSnapshot(`
-    "
-    <script>
-    export default {
+  expect(transform(input, 'file.js', [dataFunctionPlugin]).code).toMatchInlineSnapshot(`
+    "export default new Vue({
       data: () => ({
         foo: 1,
         bar: 2,
       }),
-    }
-    </script>
+    })
     "
   `);
 });
