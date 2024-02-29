@@ -11,9 +11,9 @@ const router = new VueRouter({
 });
 `;
   expect(transform(input, 'file.js', [vueRouterInstantiationPlugin]).code).toMatchInlineSnapshot(`
-    "import * as VueRouter from 'vue-router';
+    "import VueRouter, { createRouter } from 'vue-router';
 
-    const router = VueRouter.createRouter({
+    const router = createRouter({
       someProperty,
     });
     "
