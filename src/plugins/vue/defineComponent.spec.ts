@@ -108,7 +108,7 @@ const withVueMixin = Vue.mixin({
       },
     });
 
-    const withVueComponent = defineComponent({
+    const withVueComponent = Vue.component({
       computed: {
         three() {
           return 3;

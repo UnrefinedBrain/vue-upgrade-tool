@@ -34,7 +34,7 @@ export const defineComponentPlugin: CodemodPlugin = {
             && path.node.callee.object.type === 'Identifier'
             && path.node.callee.property.type === 'Identifier'
             && path.node.callee.object.name === 'Vue'
-            && ['component', 'extend'].includes(path.node.callee.property.name)) {
+            && path.node.callee.property.name === 'extend') {
             insertImport = true;
             count++;
             path.node.callee = scriptBuilders.identifier('defineComponent');
