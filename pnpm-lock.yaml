@@ -9,8 +9,8 @@ dependencies:
     specifier: ^5.4.3
     version: 5.4.3
   vue-metamorph:
-    specifier: ^2.0.9
-    version: 2.0.9(eslint@8.56.0)
+    specifier: ^2.0.13
+    version: 2.0.13(eslint@8.56.0)
 
 devDependencies:
   '@types/node':
@@ -2776,8 +2776,8 @@ packages:
       - supports-color
     dev: false
 
-  /vue-metamorph@2.0.9(eslint@8.56.0):
-    resolution: {integrity: sha512-H4VGEs2RFXZDuNIrDeKRaGEUcaUu6IP83s6ctU7/f4N2b0EUfbuUw4gso1jBSbw70O321AwVUF5f9d7EQUJWxQ==}
+  /vue-metamorph@2.0.13(eslint@8.56.0):
+    resolution: {integrity: sha512-1rA9i1c9C8l8uL6lkI0HAOXBNCowvTPj3KvLFBRTMQ3X9jpFtBtDwJ34Ca5P0SK5YK930RseUn3kIGCpph6KlA==}
     hasBin: true
     dependencies:
       '@babel/parser': 7.23.9
