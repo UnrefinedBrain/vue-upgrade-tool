@@ -196,7 +196,7 @@ export const globalMountOptionsPlugin: CodemodPlugin = {
         }
 
         if (globalObject.properties.length > 0
-          && !globalObject.properties.some((prop) => prop.type === 'Property' && prop.key.type === 'Identifier' && prop.key.name === 'global')) {
+          && !mount.properties.some((prop) => prop.type === 'Property' && prop.key.type === 'Identifier' && prop.key.name === 'global')) {
           const prop = scriptBuilders.property('init', scriptBuilders.identifier('global'), globalObject);
           mount.properties.push(prop);
         }

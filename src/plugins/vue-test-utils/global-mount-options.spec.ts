@@ -93,3 +93,26 @@ it('test', () => {
     "
   `);
 });
+
+it('should not duplicate existing mount options objects', () => {
+  const input = `
+mount(Component, {
+  global: {
+    mocks: {
+
+    }
+  }
+});
+`;
+
+  expect(transform(input, 'file.spec.js', [globalMountOptionsPlugin]).code).toMatchInlineSnapshot(`
+    "mount(Component, {
+      global: {
+        mocks: {
+
+        }
+      }
+    });
+    "
+  `);
+});
