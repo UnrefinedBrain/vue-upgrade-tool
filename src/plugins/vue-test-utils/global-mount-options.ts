@@ -27,7 +27,6 @@ export const globalMountOptionsPlugin: CodemodPlugin = {
     }
 
     let count = 0;
-    count++;
 
     for (const scriptAST of scriptASTs) {
       const globalMixins: Kinds.ExpressionKind[] = [];
@@ -139,6 +138,8 @@ export const globalMountOptionsPlugin: CodemodPlugin = {
           return true;
         });
 
+        let transformed = false;
+
         const globalObject = getGlobalObject(mount);
 
         if (globalMixins.length > 0) {
@@ -149,6 +150,7 @@ export const globalMountOptionsPlugin: CodemodPlugin = {
               scriptBuilders.arrayExpression(globalMixins),
             ),
           );
+          transformed = true;
         }
 
         if (globalDirectives.length > 0) {
@@ -161,6 +163,7 @@ export const globalMountOptionsPlugin: CodemodPlugin = {
               ),
             ),
           );
+          transformed = true;
         }
 
         if (globalComponents.length > 0) {
@@ -173,6 +176,7 @@ export const globalMountOptionsPlugin: CodemodPlugin = {
               ),
             ),
           );
+          transformed = true;
         }
 
         if (plugins.length > 0) {
@@ -185,20 +189,28 @@ export const globalMountOptionsPlugin: CodemodPlugin = {
               ),
             ),
           );
+          transformed = true;
         }
 
         if (mocks) {
           globalObject.properties.push(mocks);
+          transformed = true;
         }
 
         if (stubs) {
           globalObject.properties.push(stubs);
+          transformed = true;
         }
 
         if (globalObject.properties.length > 0
           && !mount.properties.some((prop) => prop.type === 'Property' && prop.key.type === 'Identifier' && prop.key.name === 'global')) {
           const prop = scriptBuilders.property('init', scriptBuilders.identifier('global'), globalObject);
           mount.properties.push(prop);
+          transformed = true;
+        }
+
+        if (transformed) {
+          count++;
         }
       }
 
