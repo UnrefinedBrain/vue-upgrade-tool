@@ -1,8 +1,8 @@
 name: Publish
 on:
-  release:
-    types:
-      - published
+  push:
+    tags:
+      - v*
 
 permissions:
   contents: read
@@ -17,6 +17,21 @@ jobs:
         with:
           node-version-file: .nvmrc
           registry-url: 'https://registry.npmjs.org'
+
+      - name: Create release
+        env:
+          GITHUB_TOKEN: ${{ secrets.RELEASE_PAT }}
+        run: |
+            VERSION=v$(cat package.json | jq --raw-output .version)
+            gh api \
+              --method POST \
+              -H "Accept: application/vnd.github+json" \
+              -H "X-GitHub-Api-Version: 2022-11-28" \
+              /repos/UnrefinedBrain/vue-upgrade-tool/releases \
+            -f tag_name="$VERSION" \
+            -F draft=false \
+            -F prerelease=false \
+            -F generate_release_notes=true
       - uses: pnpm/action-setup@v2
         with:
           version: ^8.14.1
