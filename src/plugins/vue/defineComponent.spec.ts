@@ -52,6 +52,56 @@ export default {
   `);
 });
 
+it('should update SFC options to use defineComponent', () => {
+  const input = `
+<script>
+export default {
+  computed: {
+    one() {
+      return 1;
+    },
+
+    two() {
+      return this.one + this.one;
+    },
+  },
+};
+</script>
+
+<template>
+  <div>
+    Foo bar baz
+  </div>
+</template>
+`;
+
+  expect(transform(input, 'file.vue', [defineComponentPlugin]).code).toMatchInlineSnapshot(`
+    "
+    <script>
+    import { defineComponent } from 'vue';
+
+    export default defineComponent({
+      computed: {
+        one() {
+          return 1;
+        },
+
+        two() {
+          return this.one + this.one;
+        },
+      },
+    });
+    </script>
+
+    <template>
+      <div>
+        Foo bar baz
+      </div>
+    </template>
+    "
+  `);
+});
+
 it('should update other component options to defineComponent', () => {
   const input = `
 import Vue from 'vue';
