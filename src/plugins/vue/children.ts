@@ -3,7 +3,12 @@ import { ManualMigrationPlugin } from 'vue-metamorph';
 export const childrenPlugin: ManualMigrationPlugin = {
   type: 'manual',
   name: 'children',
-  find(scriptASTs, sfcAST, _filename, report, { astHelpers }) {
+  find({
+    scriptASTs,
+    sfcAST,
+    report,
+    utils: { astHelpers },
+  }) {
     const message = '$children has been removed.\nSee: https://v3-migration.vuejs.org/breaking-changes/children.html#children';
 
     for (const scriptAST of scriptASTs) {

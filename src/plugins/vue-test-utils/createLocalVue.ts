@@ -4,7 +4,12 @@ import { isTestFile } from './utils';
 export const createLocalVuePlugin: ManualMigrationPlugin = {
   type: 'manual',
   name: 'createLocalVue',
-  find(scriptASTs, _sfcAST, filename, report, { astHelpers }) {
+  find({
+    scriptASTs,
+    filename,
+    report,
+    utils: { astHelpers },
+  }) {
     if (!isTestFile(filename)) {
       return;
     }

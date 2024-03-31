@@ -3,7 +3,7 @@ import { CodemodPlugin } from 'vue-metamorph';
 export const onReadyPlugin: CodemodPlugin = {
   type: 'codemod',
   name: 'router-onReady',
-  transform(scriptASTs, _sfcAST, _filename, { scriptBuilders: sb, traverseScriptAST }) {
+  transform({ scriptASTs, utils: { builders, traverseScriptAST } }) {
     let count = 0;
     for (const scriptAST of scriptASTs) {
       traverseScriptAST(scriptAST, {
@@ -14,23 +14,23 @@ export const onReadyPlugin: CodemodPlugin = {
             && path.node.callee.object.name === 'router'
             && path.node.callee.property.name === 'onReady'
             && path.node.arguments[0]) {
-            let p = sb.callExpression(
-              sb.memberExpression(
-                sb.callExpression(
-                  sb.memberExpression(
-                    sb.identifier('router'),
-                    sb.identifier('isReady'),
+            let p = builders.callExpression(
+              builders.memberExpression(
+                builders.callExpression(
+                  builders.memberExpression(
+                    builders.identifier('router'),
+                    builders.identifier('isReady'),
                   ),
                   [],
                 ),
-                sb.identifier('then'),
+                builders.identifier('then'),
               ),
               [path.node.arguments[0]],
             );
 
             if (path.node.arguments[1]) {
-              p = sb.callExpression(
-                sb.memberExpression(p, sb.identifier('catch')),
+              p = builders.callExpression(
+                builders.memberExpression(p, builders.identifier('catch')),
                 [path.node.arguments[1]],
               );
             }

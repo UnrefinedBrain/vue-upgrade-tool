@@ -29,7 +29,7 @@ const isValid = (node: Kinds.ExpressionKind | namedTypes.SpreadElement | undefin
 export const vueSetManualPlugin: ManualMigrationPlugin = {
   type: 'manual',
   name: 'vue-set-manual',
-  find(scriptASTs, _templateAST, _filename, report, { traverseScriptAST }) {
+  find({ scriptASTs, report, utils: { traverseScriptAST } }) {
     for (const scriptAST of scriptASTs) {
       traverseScriptAST(scriptAST, {
         visitCallExpression(path) {
@@ -46,14 +46,15 @@ export const vueSetManualPlugin: ManualMigrationPlugin = {
 export const vueSetPlugin: CodemodPlugin = {
   type: 'codemod',
   name: 'vue-set',
-  transform(
+  transform({
     scriptASTs,
-    templateAST,
-    _filename,
-    {
-      traverseTemplateAST, traverseScriptAST, scriptBuilders, templateBuilders,
+    sfcAST,
+    utils: {
+      traverseTemplateAST,
+      traverseScriptAST,
+      builders,
     },
-  ) {
+  }) {
     let count = 0;
 
     // look for something.$set() or Vue.set() calls in the script
@@ -67,12 +68,12 @@ export const vueSetPlugin: CodemodPlugin = {
             }
 
             const newKey = property.type === 'Literal' && typeof property.value === 'string'
-              ? scriptBuilders.identifier(property.value)
+              ? builders.identifier(property.value)
               : property;
             path.replace(
-              scriptBuilders.assignmentExpression(
+              builders.assignmentExpression(
                 '=',
-                scriptBuilders.memberExpression(
+                builders.memberExpression(
                   target,
                   newKey,
                   property.type !== 'Literal',
@@ -91,17 +92,17 @@ export const vueSetPlugin: CodemodPlugin = {
     }
 
     // look for $set() calls in the template
-    if (templateAST) {
-      if (templateAST) {
-        traverseTemplateAST(templateAST, {
+    if (sfcAST) {
+      if (sfcAST) {
+        traverseTemplateAST(sfcAST, {
           leaveNode(node) {
             if (node.type === 'VElement' && node.children.length) {
               for (let i = 0; i < node.children.length; i++) {
                 const child = node.children[i]!;
                 if (child.type === 'VElement' && child.rawName === 'b-tag') {
-                  node.children[i] = templateBuilders.vElement(
+                  node.children[i] = builders.vElement(
                     'bbbbbbb',
-                    templateBuilders.vStartTag([], false),
+                    builders.vStartTag([], false),
                     [child],
                   );
 
@@ -113,7 +114,7 @@ export const vueSetPlugin: CodemodPlugin = {
         });
       }
 
-      traverseTemplateAST(templateAST, {
+      traverseTemplateAST(sfcAST, {
         enterNode(node) {
           if (node.type === 'ExpressionStatement') {
             if (node.expression?.type === 'CallExpression'
@@ -125,11 +126,11 @@ export const vueSetPlugin: CodemodPlugin = {
               }
 
               const newKey = property.type === 'Literal' && typeof property.value === 'string'
-                ? scriptBuilders.identifier(property.value)
+                ? builders.identifier(property.value)
                 : property;
-              node.expression = scriptBuilders.assignmentExpression(
+              node.expression = builders.assignmentExpression(
                 '=',
-                scriptBuilders.memberExpression(
+                builders.memberExpression(
                   target,
                   newKey,
                   property.type !== 'Literal',

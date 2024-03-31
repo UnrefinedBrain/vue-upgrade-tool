@@ -3,9 +3,7 @@ import { ManualMigrationPlugin } from 'vue-metamorph';
 export const vueGlobalPlugin: ManualMigrationPlugin = {
   type: 'manual',
   name: 'vue-use',
-  find(scriptASTs, _templateAST, _filename, report, {
-    traverseScriptAST,
-  }) {
+  find({ scriptASTs, report, utils: { traverseScriptAST } }) {
     for (const scriptAST of scriptASTs) {
       traverseScriptAST(scriptAST, {
         visitMemberExpression(path) {

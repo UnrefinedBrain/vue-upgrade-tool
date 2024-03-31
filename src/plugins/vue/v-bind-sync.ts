@@ -3,11 +3,11 @@ import { CodemodPlugin } from 'vue-metamorph';
 export const vBindSyncPlugin: CodemodPlugin = {
   type: 'codemod',
   name: 'v-bind-sync',
-  transform(_scriptASTs, sfcAst, _filename, { astHelpers }) {
+  transform({ sfcAST, utils: { astHelpers } }) {
     let count = 0;
 
-    if (sfcAst) {
-      const binds = astHelpers.findAll(sfcAst, {
+    if (sfcAST) {
+      const binds = astHelpers.findAll(sfcAST, {
         type: 'VDirectiveKey',
         name: {
           type: 'VIdentifier',

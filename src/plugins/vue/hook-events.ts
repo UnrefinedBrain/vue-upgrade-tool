@@ -3,11 +3,11 @@ import { CodemodPlugin } from 'vue-metamorph';
 export const hookEventsPlugin: CodemodPlugin = {
   type: 'codemod',
   name: 'hook-events',
-  transform(_scriptASTs, sfcAst, _filename, { traverseTemplateAST }) {
+  transform({ sfcAST, utils: { traverseTemplateAST } }) {
     let count = 0;
 
-    if (sfcAst) {
-      traverseTemplateAST(sfcAst, {
+    if (sfcAST) {
+      traverseTemplateAST(sfcAST, {
         leaveNode(node) {
           if (node.type === 'VDirectiveKey'
             && node.name.name === 'on'

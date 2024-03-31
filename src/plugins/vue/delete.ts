@@ -27,7 +27,7 @@ const isValid = (node: Kinds.ExpressionKind | namedTypes.SpreadElement | undefin
 export const vueDeletePlugin: CodemodPlugin = {
   type: 'codemod',
   name: 'vue-delete',
-  transform(scriptASTs, _templateAST, _filename, { traverseScriptAST, scriptBuilders }) {
+  transform({ scriptASTs, utils: { traverseScriptAST, builders } }) {
     let count = 0;
 
     for (const scriptAST of scriptASTs) {
@@ -40,13 +40,13 @@ export const vueDeletePlugin: CodemodPlugin = {
             }
 
             const newKey = property.type === 'Literal' && typeof property.value === 'string'
-              ? scriptBuilders.identifier(property.value)
+              ? builders.identifier(property.value)
               : property;
             count++;
             path.replace(
-              scriptBuilders.unaryExpression(
+              builders.unaryExpression(
                 'delete',
-                scriptBuilders.memberExpression(
+                builders.memberExpression(
                   target,
                   newKey,
                   property.type !== 'Literal',

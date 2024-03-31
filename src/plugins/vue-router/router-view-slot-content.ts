@@ -4,14 +4,14 @@ import * as changeCase from 'change-case';
 export const routerViewSlotContentPlugin: CodemodPlugin = {
   type: 'codemod',
   name: 'router-view-slot-content',
-  transform(
-    _scriptASTs,
+  transform({
     sfcAST,
-    _filename,
-    {
-      astHelpers, templateBuilders, scriptBuilders, traverseTemplateAST,
+    utils: {
+      astHelpers,
+      builders,
+      traverseTemplateAST,
     },
-  ) {
+  }) {
     let count = 0;
 
     if (sfcAST) {
@@ -23,21 +23,21 @@ export const routerViewSlotContentPlugin: CodemodPlugin = {
             && !astHelpers.findFirst(node, { type: 'VElement', rawName: 'component' })) {
             count++;
             node.startTag.selfClosing = false;
-            const prop = scriptBuilders.property(
+            const prop = builders.property(
               'init',
-              scriptBuilders.identifier('Component'),
-              scriptBuilders.identifier('Component'),
+              builders.identifier('Component'),
+              builders.identifier('Component'),
             );
 
             prop.shorthand = true;
 
             node.startTag.attributes.push(
-              templateBuilders.vDirective(
-                templateBuilders.vDirectiveKey(
-                  templateBuilders.vIdentifier('slot', 'slot'),
+              builders.vDirective(
+                builders.vDirectiveKey(
+                  builders.vIdentifier('slot', 'slot'),
                 ),
-                templateBuilders.vExpressionContainer(
-                  scriptBuilders.objectPattern([
+                builders.vExpressionContainer(
+                  builders.objectPattern([
                     prop,
                   ]),
                 ),
@@ -45,18 +45,18 @@ export const routerViewSlotContentPlugin: CodemodPlugin = {
             );
 
             node.children = [
-              templateBuilders.vText('\n'),
-              templateBuilders.vElement(
+              builders.vText('\n'),
+              builders.vElement(
                 'component',
-                templateBuilders.vStartTag(
+                builders.vStartTag(
                   [
-                    templateBuilders.vDirective(
-                      templateBuilders.vDirectiveKey(
-                        templateBuilders.vIdentifier('bind', ':'),
-                        templateBuilders.vIdentifier('is'),
+                    builders.vDirective(
+                      builders.vDirectiveKey(
+                        builders.vIdentifier('bind', ':'),
+                        builders.vIdentifier('is'),
                       ),
-                      templateBuilders.vExpressionContainer(
-                        scriptBuilders.identifier('Component'),
+                      builders.vExpressionContainer(
+                        builders.identifier('Component'),
                       ),
                     ),
                   ],
@@ -64,7 +64,7 @@ export const routerViewSlotContentPlugin: CodemodPlugin = {
                 ),
                 node.children,
               ),
-              templateBuilders.vText('\n'),
+              builders.vText('\n'),
             ];
           }
         },

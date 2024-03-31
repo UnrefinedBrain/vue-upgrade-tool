@@ -4,7 +4,12 @@ import { isTestFile } from './utils';
 export const removedWrapperApisPlugin: ManualMigrationPlugin = {
   type: 'manual',
   name: 'removed-wrapper-apis',
-  find(scriptASTs, _sfcAST, filename, report, { traverseScriptAST }) {
+  find({
+    scriptASTs,
+    filename,
+    report,
+    utils: { traverseScriptAST },
+  }) {
     if (!isTestFile(filename)) {
       return;
     }

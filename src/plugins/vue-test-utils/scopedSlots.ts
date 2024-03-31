@@ -4,7 +4,7 @@ import { findMounts, isTestFile } from './utils';
 export const scopedSlotsMountPlugin: CodemodPlugin = {
   type: 'codemod',
   name: 'scoped-slots-mount-option',
-  transform(scriptASTs, _sfcAST, filename, { scriptBuilders }) {
+  transform({ scriptASTs, filename, utils: { builders } }) {
     if (!isTestFile(filename)) {
       return 0;
     }
@@ -31,13 +31,13 @@ export const scopedSlotsMountPlugin: CodemodPlugin = {
         if (!slots) {
           pushSlotsProperty = true;
 
-          slots = scriptBuilders.property(
+          slots = builders.property(
             'init',
-            scriptBuilders.identifier('slots'),
-            scriptBuilders.objectExpression([
+            builders.identifier('slots'),
+            builders.objectExpression([
               ...scopedSlots.value.type === 'ObjectExpression'
                 ? scopedSlots.value.properties
-                : [scriptBuilders.spreadElement(scopedSlots.value as never)],
+                : [builders.spreadElement(scopedSlots.value as never)],
             ]),
           );
         } else if (slots.type === 'Property') {
@@ -46,14 +46,14 @@ export const scopedSlotsMountPlugin: CodemodPlugin = {
             slots.value.properties.push(
               ...scopedSlots.value.type === 'ObjectExpression'
                 ? scopedSlots.value.properties
-                : [scriptBuilders.spreadElement(scopedSlots.value as never)],
+                : [builders.spreadElement(scopedSlots.value as never)],
             );
           } else {
-            slots.value = scriptBuilders.objectExpression([
-              scriptBuilders.spreadElement(slots.value as never),
+            slots.value = builders.objectExpression([
+              builders.spreadElement(slots.value as never),
               ...scopedSlots.value.type === 'ObjectExpression'
                 ? scopedSlots.value.properties
-                : [scriptBuilders.spreadElement(scopedSlots.value as never)],
+                : [builders.spreadElement(scopedSlots.value as never)],
             ]);
           }
         }

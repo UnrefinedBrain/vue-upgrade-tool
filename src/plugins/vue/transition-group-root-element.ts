@@ -4,7 +4,7 @@ import * as changeCase from 'change-case';
 export const transitionGroupRootElementPlugin: CodemodPlugin = {
   type: 'codemod',
   name: 'transition-group-root-element',
-  transform(_scriptASTs, sfcAST, _filename, { traverseTemplateAST, templateBuilders }) {
+  transform({ sfcAST, utils: { traverseTemplateAST, builders } }) {
     let count = 0;
 
     if (sfcAST) {
@@ -27,9 +27,9 @@ export const transitionGroupRootElementPlugin: CodemodPlugin = {
             })) {
             count++;
             node.startTag.attributes.push(
-              templateBuilders.vAttribute(
-                templateBuilders.vIdentifier('tag'),
-                templateBuilders.vLiteral('span'),
+              builders.vAttribute(
+                builders.vIdentifier('tag'),
+                builders.vLiteral('span'),
               ),
             );
           }

@@ -8,7 +8,7 @@ const replacements: Record<string, string> = {
 export const transitionPropsPlugin: CodemodPlugin = {
   type: 'codemod',
   name: 'transition-props',
-  transform(_scriptASTs, sfcAST, _filename, { traverseTemplateAST }) {
+  transform({ sfcAST, utils: { traverseTemplateAST } }) {
     let count = 0;
 
     if (sfcAST) {

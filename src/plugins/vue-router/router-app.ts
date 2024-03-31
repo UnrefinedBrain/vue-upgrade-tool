@@ -3,7 +3,12 @@ import { ManualMigrationPlugin } from 'vue-metamorph';
 export const routerAppPlugin: ManualMigrationPlugin = {
   type: 'manual',
   name: 'router.app',
-  find(scriptASTs, sfcAST, _filename, report, { astHelpers }) {
+  find({
+    scriptASTs,
+    sfcAST,
+    report,
+    utils: { astHelpers },
+  }) {
     const message = 'router.app was removed.\nSee: https://router.vuejs.org/guide/migration/#Removal-of-router-app';
     const matcher1 = {
       type: 'MemberExpression',

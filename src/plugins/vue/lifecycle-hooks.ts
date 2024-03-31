@@ -8,7 +8,7 @@ const replace: Record<string, string> = {
 export const lifecycleHookPlugin: CodemodPlugin = {
   type: 'codemod',
   name: 'lifecycle-hooks',
-  transform(scriptASTs, _sfcAST, filename, { astHelpers }) {
+  transform({ scriptASTs, filename, utils: { astHelpers } }) {
     let count = 0;
 
     for (const scriptAST of scriptASTs) {

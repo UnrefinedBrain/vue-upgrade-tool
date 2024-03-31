@@ -1,5 +1,5 @@
 import {
-  CodemodPlugin, Kinds, namedTypes, scriptBuilders,
+  CodemodPlugin, Kinds, namedTypes, builders,
 } from 'vue-metamorph';
 import { findMounts, isTestFile } from './utils';
 
@@ -13,7 +13,7 @@ const getGlobalObject = (node: namedTypes.ObjectExpression) => {
     }
   }
 
-  const value = scriptBuilders.objectExpression([]);
+  const value = builders.objectExpression([]);
 
   return value;
 };
@@ -21,7 +21,7 @@ const getGlobalObject = (node: namedTypes.ObjectExpression) => {
 export const globalMountOptionsPlugin: CodemodPlugin = {
   type: 'codemod',
   name: 'global-mount-options',
-  transform(scriptASTs, _sfcAST, filename, { traverseScriptAST }) {
+  transform({ scriptASTs, filename, utils: { traverseScriptAST } }) {
     if (!isTestFile(filename)) {
       return 0;
     }
@@ -144,10 +144,10 @@ export const globalMountOptionsPlugin: CodemodPlugin = {
 
         if (globalMixins.length > 0) {
           globalObject.properties.push(
-            scriptBuilders.property(
+            builders.property(
               'init',
-              scriptBuilders.identifier('mixins'),
-              scriptBuilders.arrayExpression(globalMixins),
+              builders.identifier('mixins'),
+              builders.arrayExpression(globalMixins),
             ),
           );
           transformed = true;
@@ -155,11 +155,11 @@ export const globalMountOptionsPlugin: CodemodPlugin = {
 
         if (globalDirectives.length > 0) {
           globalObject.properties.push(
-            scriptBuilders.property(
+            builders.property(
               'init',
-              scriptBuilders.identifier('directives'),
-              scriptBuilders.objectExpression(
-                globalDirectives.map(([name, value]) => scriptBuilders.property('init', name, value)),
+              builders.identifier('directives'),
+              builders.objectExpression(
+                globalDirectives.map(([name, value]) => builders.property('init', name, value)),
               ),
             ),
           );
@@ -168,11 +168,11 @@ export const globalMountOptionsPlugin: CodemodPlugin = {
 
         if (globalComponents.length > 0) {
           globalObject.properties.push(
-            scriptBuilders.property(
+            builders.property(
               'init',
-              scriptBuilders.identifier('components'),
-              scriptBuilders.objectExpression(
-                globalComponents.map(([name, value]) => scriptBuilders.property('init', name, value)),
+              builders.identifier('components'),
+              builders.objectExpression(
+                globalComponents.map(([name, value]) => builders.property('init', name, value)),
               ),
             ),
           );
@@ -181,10 +181,10 @@ export const globalMountOptionsPlugin: CodemodPlugin = {
 
         if (plugins.length > 0) {
           globalObject.properties.push(
-            scriptBuilders.property(
+            builders.property(
               'init',
-              scriptBuilders.identifier('plugins'),
-              scriptBuilders.arrayExpression(
+              builders.identifier('plugins'),
+              builders.arrayExpression(
                 plugins,
               ),
             ),
@@ -204,7 +204,7 @@ export const globalMountOptionsPlugin: CodemodPlugin = {
 
         if (globalObject.properties.length > 0
           && !mount.properties.some((prop) => prop.type === 'Property' && prop.key.type === 'Identifier' && prop.key.name === 'global')) {
-          const prop = scriptBuilders.property('init', scriptBuilders.identifier('global'), globalObject);
+          const prop = builders.property('init', builders.identifier('global'), globalObject);
           mount.properties.push(prop);
           transformed = true;
         }

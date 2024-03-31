@@ -3,7 +3,7 @@ import { ManualMigrationPlugin } from 'vue-metamorph';
 export const routerMatchPlugin: ManualMigrationPlugin = {
   type: 'manual',
   name: 'router-match',
-  find(scriptASTs, _sfcAST, _filename, report, { astHelpers }) {
+  find({ scriptASTs, report, utils: { astHelpers } }) {
     for (const scriptAST of scriptASTs) {
       astHelpers
         .findAll(scriptAST, {

@@ -3,7 +3,7 @@ import { CodemodPlugin } from 'vue-metamorph';
 export const vuexInstantiationPlugin: CodemodPlugin = {
   type: 'codemod',
   name: 'vuex-instantiation',
-  transform(scriptASTs, _sfcAST, _filename, { astHelpers, traverseScriptAST, scriptBuilders }) {
+  transform({ scriptASTs, utils: { astHelpers, traverseScriptAST, builders } }) {
     let count = 0;
 
     for (const scriptAST of scriptASTs) {
@@ -17,8 +17,8 @@ export const vuexInstantiationPlugin: CodemodPlugin = {
             && path.node.callee.object.name === 'Vuex'
             && path.node.callee.property.name === 'Store') {
             path.replace(
-              scriptBuilders.callExpression(
-                scriptBuilders.identifier('createStore'),
+              builders.callExpression(
+                builders.identifier('createStore'),
                 path.node.arguments,
               ),
             );

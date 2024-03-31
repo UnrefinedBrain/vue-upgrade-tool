@@ -3,10 +3,13 @@ import { CodemodPlugin } from 'vue-metamorph';
 export const vueRouterInstantiationPlugin: CodemodPlugin = {
   type: 'codemod',
   name: 'vue-router-instantiation',
-  transform(scriptASTs, _templateAST, _filename, {
-    astHelpers,
-    traverseScriptAST,
-    scriptBuilders: sb,
+  transform({
+    scriptASTs,
+    utils: {
+      astHelpers,
+      traverseScriptAST,
+      builders,
+    },
   }) {
     let count = 0;
     for (const scriptAST of scriptASTs) {
@@ -18,8 +21,8 @@ export const vueRouterInstantiationPlugin: CodemodPlugin = {
             insertImport = true;
             count++;
             path.replace(
-              sb.callExpression(
-                sb.identifier('createRouter'),
+              builders.callExpression(
+                builders.identifier('createRouter'),
                 path.node.arguments,
               ),
             );

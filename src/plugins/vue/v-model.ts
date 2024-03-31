@@ -43,7 +43,16 @@ const isShadowedByVFor = (node?: AST.Node | null): boolean => {
 export const vModelPlugin: CodemodPlugin = {
   type: 'codemod',
   name: 'v-model',
-  transform(scriptASTs, sfcAST, filename, { astHelpers, scriptBuilders, traverseTemplateAST }) {
+  transform({
+    scriptASTs,
+    sfcAST,
+    filename,
+    utils: {
+      astHelpers,
+      builders,
+      traverseTemplateAST,
+    },
+  }) {
     let count = 0;
 
     for (const scriptAST of scriptASTs) {
@@ -165,7 +174,7 @@ export const vModelPlugin: CodemodPlugin = {
             if (node.parent?.type === 'Property'
               && node.parent.key === node) {
               node.parent.shorthand = false;
-              node.parent.value = scriptBuilders.identifier('value');
+              node.parent.value = builders.identifier('value');
               count++;
               return;
             }

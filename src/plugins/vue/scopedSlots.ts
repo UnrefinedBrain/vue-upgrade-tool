@@ -3,7 +3,7 @@ import { CodemodPlugin } from 'vue-metamorph';
 export const scopedSlotsPlugin: CodemodPlugin = {
   type: 'codemod',
   name: 'scoped-slots',
-  transform(scriptASTs, templateAST, _filename, { astHelpers, scriptBuilders }) {
+  transform({ scriptASTs, sfcAST, utils: { astHelpers, builders } }) {
     let count = 0;
     for (const scriptAST of scriptASTs) {
       astHelpers.findAll(scriptAST, {
@@ -14,12 +14,12 @@ export const scopedSlotsPlugin: CodemodPlugin = {
         },
       }).forEach((id) => {
         count++;
-        id.property = scriptBuilders.identifier('$slots');
+        id.property = builders.identifier('$slots');
       });
     }
 
-    if (templateAST) {
-      astHelpers.findAll(templateAST, {
+    if (sfcAST) {
+      astHelpers.findAll(sfcAST, {
         type: 'Identifier',
         name: '$scopedSlots',
       }).forEach((id) => {

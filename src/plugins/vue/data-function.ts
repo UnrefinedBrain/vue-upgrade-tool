@@ -3,7 +3,7 @@ import { CodemodPlugin } from 'vue-metamorph';
 export const dataFunctionPlugin: CodemodPlugin = {
   type: 'codemod',
   name: 'data-function',
-  transform(scriptASTs, _sfcAST, _filename, { traverseScriptAST, scriptBuilders }) {
+  transform({ scriptASTs, utils: { traverseScriptAST, builders } }) {
     let count = 0;
 
     for (const scriptAST of scriptASTs) {
@@ -18,7 +18,7 @@ export const dataFunctionPlugin: CodemodPlugin = {
                 && property.key.type === 'Identifier'
                 && property.key.name === 'data'
                 && property.value.type === 'ObjectExpression') {
-                property.value = scriptBuilders.arrowFunctionExpression([], property.value);
+                property.value = builders.arrowFunctionExpression([], property.value);
                 count++;
               }
             }

@@ -3,7 +3,7 @@ import { CodemodPlugin } from 'vue-metamorph';
 export const nextTickPlugin: CodemodPlugin = {
   type: 'codemod',
   name: 'nextTick',
-  transform(scriptASTs, _sfcAST, _filename, { astHelpers, scriptBuilders }) {
+  transform({ scriptASTs, utils: { astHelpers, builders } }) {
     let count = 0;
 
     for (const scriptAST of scriptASTs) {
@@ -19,7 +19,7 @@ export const nextTickPlugin: CodemodPlugin = {
           },
         },
       }).forEach((call) => {
-        call.callee = scriptBuilders.identifier('nextTick');
+        call.callee = builders.identifier('nextTick');
         insertImport = true;
         count++;
       });
@@ -38,7 +38,7 @@ export const nextTickPlugin: CodemodPlugin = {
           },
         },
       }).forEach((call) => {
-        call.callee = scriptBuilders.identifier('nextTick');
+        call.callee = builders.identifier('nextTick');
         insertImport = true;
         count++;
       });

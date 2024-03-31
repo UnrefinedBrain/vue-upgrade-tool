@@ -3,7 +3,7 @@ import { ManualMigrationPlugin } from 'vue-metamorph';
 export const ifForPrecedencePlugin: ManualMigrationPlugin = {
   type: 'manual',
   name: 'if-for-precedence',
-  find(_scriptASTs, sfcAST, _filename, report, { traverseTemplateAST }) {
+  find({ sfcAST, report, utils: { traverseTemplateAST } }) {
     if (sfcAST) {
       traverseTemplateAST(sfcAST, {
         enterNode(node) {

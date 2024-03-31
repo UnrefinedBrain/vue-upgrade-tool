@@ -3,7 +3,7 @@ import { CodemodPlugin, namedTypes } from 'vue-metamorph';
 export const defineComponentPlugin: CodemodPlugin = {
   type: 'codemod',
   name: 'defineComponent',
-  transform(scriptASTs, _sfcAST, filename, { traverseScriptAST, astHelpers, scriptBuilders }) {
+  transform({ scriptASTs, filename, utils: { traverseScriptAST, astHelpers, builders } }) {
     let count = 0;
 
     for (const scriptAST of scriptASTs) {
@@ -18,8 +18,8 @@ export const defineComponentPlugin: CodemodPlugin = {
         });
 
         if (defaultExport) {
-          defaultExport.declaration = scriptBuilders.callExpression(
-            scriptBuilders.identifier('defineComponent'),
+          defaultExport.declaration = builders.callExpression(
+            builders.identifier('defineComponent'),
             [defaultExport.declaration as namedTypes.ObjectExpression],
           );
 
@@ -37,7 +37,7 @@ export const defineComponentPlugin: CodemodPlugin = {
             && path.node.callee.property.name === 'extend') {
             insertImport = true;
             count++;
-            path.node.callee = scriptBuilders.identifier('defineComponent');
+            path.node.callee = builders.identifier('defineComponent');
           }
 
           this.traverse(path);

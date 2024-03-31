@@ -3,7 +3,7 @@ import { ManualMigrationPlugin } from 'vue-metamorph';
 export const catchAllPlugin: ManualMigrationPlugin = {
   type: 'manual',
   name: 'vue-router-catch-all',
-  find(scriptASTs, _sfcAST, _filename, report, { traverseScriptAST }) {
+  find({ scriptASTs, report, utils: { traverseScriptAST } }) {
     for (const scriptAST of scriptASTs) {
       traverseScriptAST(scriptAST, {
         visitProperty(path) {

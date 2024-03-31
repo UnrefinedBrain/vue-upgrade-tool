@@ -3,7 +3,7 @@ import { CodemodPlugin, ManualMigrationPlugin } from 'vue-metamorph';
 export const removeListenersCodemodPlugin: CodemodPlugin = {
   type: 'codemod',
   name: 'remove-listeners',
-  transform(_scriptASTs, sfcAST, _filename, { astHelpers, traverseTemplateAST }) {
+  transform({ sfcAST, utils: { astHelpers, traverseTemplateAST } }) {
     let count = 0;
 
     if (sfcAST) {
@@ -38,7 +38,12 @@ export const removeListenersCodemodPlugin: CodemodPlugin = {
 export const removeListenersManualMigrationPlugin: ManualMigrationPlugin = {
   type: 'manual',
   name: 'remove-listeners',
-  find(scriptASTs, sfcAST, _filename, report, { astHelpers }) {
+  find({
+    scriptASTs,
+    sfcAST,
+    report,
+    utils: { astHelpers },
+  }) {
     const message = '$listeners has been removed.\nSee: https://v3-migration.vuejs.org/breaking-changes/listeners-removed.html#listeners-removed';
 
     for (const scriptAST of scriptASTs) {

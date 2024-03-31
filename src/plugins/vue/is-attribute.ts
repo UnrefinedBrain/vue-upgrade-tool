@@ -3,7 +3,7 @@ import { ManualMigrationPlugin } from 'vue-metamorph';
 export const isAttributePlugin: ManualMigrationPlugin = {
   type: 'manual',
   name: 'is-attribute',
-  find(_scriptASTs, sfcAST, _filename, report, { traverseTemplateAST }) {
+  find({ sfcAST, report, utils: { traverseTemplateAST } }) {
     if (sfcAST) {
       traverseTemplateAST(sfcAST, {
         leaveNode(node) {

@@ -3,7 +3,12 @@ import { CodemodPlugin } from 'vue-metamorph';
 export const functionalComponentPlugin: CodemodPlugin = {
   type: 'codemod',
   name: 'functional-component',
-  transform(scriptASTs, sfcAST, filename, { astHelpers }) {
+  transform({
+    scriptASTs,
+    sfcAST,
+    filename,
+    utils: { astHelpers },
+  }) {
     let count = 0;
 
     for (const scriptAST of scriptASTs) {

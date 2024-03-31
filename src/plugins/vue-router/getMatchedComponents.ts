@@ -1,4 +1,4 @@
-import { scriptBuilders as sb, CodemodPlugin } from 'vue-metamorph';
+import { builders as sb, CodemodPlugin } from 'vue-metamorph';
 
 const replacement = () => sb.callExpression(
   sb.memberExpression(
@@ -36,7 +36,7 @@ const replacement = () => sb.callExpression(
 export const getMatchedComponentsPlugin: CodemodPlugin = {
   type: 'codemod',
   name: 'getMatchedComponents',
-  transform(scriptASTs, _sfcAST, _filename, { traverseScriptAST }) {
+  transform({ scriptASTs, utils: { traverseScriptAST } }) {
     let count = 0;
 
     for (const scriptAST of scriptASTs) {

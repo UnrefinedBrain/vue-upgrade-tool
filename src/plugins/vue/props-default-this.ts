@@ -3,7 +3,12 @@ import { ManualMigrationPlugin } from 'vue-metamorph';
 export const propsDefaultThisPlugin: ManualMigrationPlugin = {
   type: 'manual',
   name: 'props-default-this',
-  find(scriptASTs, _sfcAST, filename, report, { astHelpers }) {
+  find({
+    scriptASTs,
+    filename,
+    report,
+    utils: { astHelpers },
+  }) {
     const message = 'Props default functions can no longer access `this`\nSee: https://v3-migration.vuejs.org/breaking-changes/props-default-this.html';
 
     for (const scriptAST of scriptASTs) {

@@ -3,7 +3,7 @@ import { CodemodPlugin, namedTypes } from 'vue-metamorph';
 export const contextualHPlugin: CodemodPlugin = {
   type: 'codemod',
   name: 'contextual-h',
-  transform(scriptASTs, _sfcAST, _filename, utils) {
+  transform({ scriptASTs, utils: { traverseScriptAST, builders, astHelpers } }) {
     let count = 0;
 
     for (const scriptAST of scriptASTs) {
@@ -14,7 +14,7 @@ export const contextualHPlugin: CodemodPlugin = {
       }[] = [];
 
       // find render functions
-      utils.traverseScriptAST(scriptAST, {
+      traverseScriptAST(scriptAST, {
         visitCallExpression(path) {
           if (path.node.callee.type === 'MemberExpression'
             && path.node.callee.object.type === 'ThisExpression'
@@ -22,7 +22,7 @@ export const contextualHPlugin: CodemodPlugin = {
             && path.node.callee.property.name === '$createElement') {
             addImport = true;
             count++;
-            path.node.callee = utils.scriptBuilders.identifier('h');
+            path.node.callee = builders.identifier('h');
           }
 
           this.traverse(path);
@@ -53,7 +53,7 @@ export const contextualHPlugin: CodemodPlugin = {
 
       // if render functions used some name other than `h`, rename those function calls to h()
       for (const { node, name } of renames) {
-        utils.traverseScriptAST(node, {
+        traverseScriptAST(node, {
           visitCallExpression(path) {
             if (path.node.callee.type === 'Identifier'
               && path.node.callee.name === name) {
@@ -66,7 +66,7 @@ export const contextualHPlugin: CodemodPlugin = {
       }
 
       if (addImport) {
-        utils.astHelpers.createNamedImport(scriptAST, 'vue', 'h');
+        astHelpers.createNamedImport(scriptAST, 'vue', 'h');
       }
     }
 

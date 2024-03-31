@@ -4,7 +4,7 @@ import * as changeCase from 'change-case';
 export const routerLinkPropsPlugin: ManualMigrationPlugin = {
   type: 'manual',
   name: 'router-link-props',
-  find(_scriptASTs, sfcAST, _filename, report, { traverseTemplateAST }) {
+  find({ sfcAST, report, utils: { traverseTemplateAST } }) {
     if (sfcAST) {
       traverseTemplateAST(sfcAST, {
         enterNode(node) {

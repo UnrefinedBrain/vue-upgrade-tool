@@ -4,7 +4,7 @@ import { findMounts, isTestFile } from './utils';
 export const propsDataTestPlugin: CodemodPlugin = {
   type: 'codemod',
   name: 'propsData',
-  transform(scriptASTs, _sfcAST, filename, { scriptBuilders }) {
+  transform({ scriptASTs, filename, utils: { builders } }) {
     if (!isTestFile(filename)) {
       return 0;
     }
@@ -17,7 +17,7 @@ export const propsDataTestPlugin: CodemodPlugin = {
           if (prop.type === 'Property'
             && prop.key.type === 'Identifier'
             && prop.key.name === 'propsData') {
-            prop.key = scriptBuilders.identifier('props');
+            prop.key = builders.identifier('props');
             prop.shorthand = false;
             count++;
           }
