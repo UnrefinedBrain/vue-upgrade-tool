@@ -19,6 +19,7 @@ import { childrenPlugin } from './children';
 import { propsDefaultThisPlugin } from './props-default-this';
 import { vModelPlugin } from './v-model';
 import { isAttributePlugin } from './is-attribute';
+import { vDeepPlugin } from './v-deep';
 
 export const vue = (): Plugin[] => ([
   vueSetPlugin,
@@ -43,4 +44,5 @@ export const vue = (): Plugin[] => ([
   propsDefaultThisPlugin,
   vModelPlugin,
   isAttributePlugin,
+  vDeepPlugin,
 ]);
