@@ -85,12 +85,14 @@ export const vModelPlugin: CodemodPlugin = {
                 if (prop.type === 'Property') {
                   if (prop.key.type === 'Identifier' && prop.key.name === 'value') {
                     prop.key.name = 'modelValue';
+                    count++;
                   }
 
                   if (prop.key.type === 'Literal'
                     && typeof prop.key.value === 'string'
                     && prop.key.value.startsWith('value')) {
                     prop.key.value = prop.key.value.replace(/^value/, 'modelValue');
+                    count++;
                   }
                 }
               }
