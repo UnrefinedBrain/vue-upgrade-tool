@@ -76,6 +76,25 @@ export const vModelPlugin: CodemodPlugin = {
 
               break;
             }
+
+            if (option.type === 'Property'
+              && option.key.type === 'Identifier'
+              && option.key.name === 'watch'
+              && option.value.type === 'ObjectExpression') {
+              for (const prop of option.value.properties) {
+                if (prop.type === 'Property') {
+                  if (prop.key.type === 'Identifier' && prop.key.name === 'value') {
+                    prop.key.name = 'modelValue';
+                  }
+
+                  if (prop.key.type === 'Literal'
+                    && typeof prop.key.value === 'string'
+                    && prop.key.value.startsWith('value')) {
+                    prop.key.value = prop.key.value.replace(/^value/, 'modelValue');
+                  }
+                }
+              }
+            }
           }
         });
 

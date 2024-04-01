@@ -228,3 +228,45 @@ export default {
     "
   `);
 });
+
+it('should update watcher names', () => {
+  const input = `
+<script>
+export default {
+  watch: {
+    value() {
+
+    },
+
+    'value.deep.thing'() {
+
+    },
+
+    'trick.value.foo'() {
+
+    },
+  }
+};
+</script>`;
+
+  expect(transform(input, 'file.vue', [vModelPlugin]).code).toMatchInlineSnapshot(`
+    "
+    <script>
+    export default {
+      watch: {
+        modelValue() {
+
+        },
+
+        'modelValue.deep.thing'() {
+
+        },
+
+        'trick.value.foo'() {
+
+        },
+      }
+    };
+    </script>"
+  `);
+});
