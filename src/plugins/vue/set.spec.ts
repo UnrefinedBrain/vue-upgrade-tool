@@ -15,6 +15,10 @@ something.$set(target, key, value);
 
 // with regular $set
 something.$set(target, 'key', value);
+
+// edge case
+Vue.set(a || b, 'c-d-e', d);
+Vue.set(a || b, 'foo-bar-baz', value);
 `;
 
   expect(transform(input, 'file.js', [vueSetPlugin]).code).toMatchInlineSnapshot(`
@@ -29,6 +33,9 @@ something.$set(target, 'key', value);
 
     // with regular $set
     target.key = value;
+
+    // edge case
+    (a || b)['c-d-e'] = d;
     "
   `);
 });

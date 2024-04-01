@@ -67,16 +67,24 @@ export const vueSetPlugin: CodemodPlugin = {
               return this.traverse(path);
             }
 
-            const newKey = property.type === 'Literal' && typeof property.value === 'string'
-              ? builders.identifier(property.value)
-              : property;
+            let computed = true;
+            let key;
+            if (property.type === 'Literal'
+              && typeof property.value === 'string'
+              && /^[$a-zA-Z]\w+$/.test(property.value)) {
+              computed = false;
+              key = builders.identifier(property.value);
+            } else {
+              key = property;
+            }
+
             path.replace(
               builders.assignmentExpression(
                 '=',
                 builders.memberExpression(
                   target,
-                  newKey,
-                  property.type !== 'Literal',
+                  key,
+                  computed,
                 ),
                 value,
               ),
