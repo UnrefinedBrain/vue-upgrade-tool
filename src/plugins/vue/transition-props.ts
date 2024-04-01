@@ -39,10 +39,12 @@ export const transitionPropsPlugin: CodemodPlugin = {
       styleAST.walkRules((node) => {
         if (/\.v-enter(?!-)\b/.test(node.selector)) {
           node.selector = node.selector.replace(/\.v-enter(?!-)\b/, '.v-enter-from');
+          count++;
         }
 
         if (/\.v-leave(?!-)\b/.test(node.selector)) {
           node.selector = node.selector.replace(/\.v-leave(?!-)\b/, '.v-leave-from');
+          count++;
         }
       });
     }
