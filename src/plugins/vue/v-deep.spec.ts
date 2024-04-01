@@ -30,6 +30,10 @@ it('should transform v-deep', () => {
 .foo ::v-deep > * {
   color: brown;
 }
+
+.foo::v-deep .bar {
+  color: tan;
+}
 </style>
 `;
 

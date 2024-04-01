@@ -1,6 +1,6 @@
 import { CodemodPlugin } from 'vue-metamorph';
 
-const vDeepRegex = /(.*?) ?(?:(?::{1,2}v-deep)|(?:\/deep\/)) ?(>)? ?(.*)/s;
+const vDeepRegex = /(.*?)( +)?(?:(?::{1,2}v-deep)|(?:\/deep\/)) ?(>)? ?(.*)/s;
 
 export const vDeepPlugin: CodemodPlugin = {
   type: 'codemod',
@@ -20,11 +20,11 @@ export const vDeepPlugin: CodemodPlugin = {
             continue;
           }
 
-          const [, before, middle, after] = parts[i]!.match(vDeepRegex)!;
+          const [, before, spacing, middle, after] = parts[i]!.match(vDeepRegex)!;
           let str = before ?? '';
 
           if (before) {
-            str += ' ';
+            str += spacing ?? '';
           }
 
           if (middle) {
