@@ -8,7 +8,7 @@ const replacements: Record<string, string> = {
 export const transitionPropsPlugin: CodemodPlugin = {
   type: 'codemod',
   name: 'transition-props',
-  transform({ sfcAST, utils: { traverseTemplateAST } }) {
+  transform({ sfcAST, styleASTs, utils: { traverseTemplateAST } }) {
     let count = 0;
 
     if (sfcAST) {
@@ -32,6 +32,18 @@ export const transitionPropsPlugin: CodemodPlugin = {
             }
           }
         },
+      });
+    }
+
+    for (const styleAST of styleASTs) {
+      styleAST.walkRules((node) => {
+        if (/\.v-enter(?!-)\b/.test(node.selector)) {
+          node.selector = node.selector.replace(/\.v-enter(?!-)\b/, '.v-enter-from');
+        }
+
+        if (/\.v-leave(?!-)\b/.test(node.selector)) {
+          node.selector = node.selector.replace(/\.v-leave(?!-)\b/, '.v-leave-from');
+        }
       });
     }
 

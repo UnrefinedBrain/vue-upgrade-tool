@@ -19,6 +19,18 @@ it('should rename transition props', () => {
     child
   </transition>
 </template>
+
+<style>
+.v-enter,
+.v-leave-to {
+  opacity: 0;
+}
+
+.v-leave,
+.v-enter-to {
+  opacity: 1;
+}
+</style>
 `;
 
   expect(transform(input, 'file.vue', [transitionPropsPlugin]).code).toMatchInlineSnapshot(`
@@ -38,6 +50,18 @@ it('should rename transition props', () => {
         child
       </transition>
     </template>
+
+    <style>
+    .v-enter-from,
+    .v-leave-to {
+      opacity: 0;
+    }
+
+    .v-leave-from,
+    .v-enter-to {
+      opacity: 1;
+    }
+    </style>
     "
   `);
 });
