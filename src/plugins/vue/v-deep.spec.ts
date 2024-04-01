@@ -58,12 +58,16 @@ it('should transform v-deep', () => {
     }
 
     :deep(.foo),
-     :deep(.bar) {
+    :deep(.bar) {
       color: purple;
     }
 
     .foo > :deep(*) {
       color: brown;
+    }
+
+    .foo:deep(.bar) {
+      color: tan;
     }
     </style>
     "
