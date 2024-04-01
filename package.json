@@ -19,7 +19,8 @@
   "scripts": {
     "build": "tsc && vite build && chmod +x dist/cli.js",
     "lint": "eslint .",
-    "test": "vitest"
+    "test": "vitest",
+    "preversion": "git clean -dfx && pnpm i && pnpm build && pnpm lint && pnpm run test --run"
   },
   "files": [
     "dist"
