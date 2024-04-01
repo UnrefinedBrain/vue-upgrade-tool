@@ -36,6 +36,7 @@ Vue.set(a || b, 'foo-bar-baz', value);
 
     // edge case
     (a || b)['c-d-e'] = d;
+    (a || b)['foo-bar-baz'] = value;
     "
   `);
 });
