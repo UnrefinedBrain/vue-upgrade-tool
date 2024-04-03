@@ -9,8 +9,8 @@ dependencies:
     specifier: ^5.4.3
     version: 5.4.3
   vue-metamorph:
-    specifier: ^3.1.1
-    version: 3.1.1(eslint@8.56.0)
+    specifier: ^3.1.2
+    version: 3.1.2(eslint@8.56.0)
 
 devDependencies:
   '@types/node':
@@ -662,7 +662,7 @@ packages:
   /@vitest/snapshot@1.2.2:
     resolution: {integrity: sha512-SmGY4saEw1+bwE1th6S/cZmPxz/Q4JWsl7LvbQIky2tKE35US4gd0Mjzqfr84/4OD0tikGWaWdMja/nWL5NIPA==}
     dependencies:
-      magic-string: 0.30.7
+      magic-string: 0.30.8
       pathe: 1.1.2
       pretty-format: 29.7.0
     dev: true
@@ -2109,7 +2109,6 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.15
-    dev: false
 
   /merge-stream@2.0.0:
     resolution: {integrity: sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w==}
@@ -2395,7 +2394,7 @@ packages:
     dependencies:
       nanoid: 3.3.7
       picocolors: 1.0.0
-      source-map-js: 1.0.2
+      source-map-js: 1.2.0
     dev: true
 
   /postcss@8.4.38:
@@ -2612,15 +2611,9 @@ packages:
       is-fullwidth-code-point: 3.0.0
     dev: false
 
-  /source-map-js@1.0.2:
-    resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
-    engines: {node: '>=0.10.0'}
-    dev: true
-
   /source-map-js@1.2.0:
     resolution: {integrity: sha512-itJW8lvSA0TXEphiRoawsCksnlf8SyvmFzIhltqAHluXd88pkCd+cXJVHTDwdCr0IzwptSm035IHQktUu1QUMg==}
     engines: {node: '>=0.10.0'}
-    dev: false
 
   /source-map@0.6.1:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
@@ -3077,8 +3070,8 @@ packages:
       - supports-color
     dev: false
 
-  /vue-metamorph@3.1.1(eslint@8.56.0):
-    resolution: {integrity: sha512-nnJIFkeBHrn1ROYZK/v5bKIukwhKqKokWG4HLjAuC5agCxAvlNhA8VsBRhl8I3U+JNw9SpPqNuGRwR7wI1pIKQ==}
+  /vue-metamorph@3.1.2(eslint@8.56.0):
+    resolution: {integrity: sha512-aHtpzP350ikdgpUg/KHoL9BSm4WT3mloKrD7tRVxw6LWQ7TBliTeZTeyIw1wZ/XTt1nafgL8TVBJZo8KMirA4w==}
     hasBin: true
     dependencies:
       '@babel/parser': 7.24.1
