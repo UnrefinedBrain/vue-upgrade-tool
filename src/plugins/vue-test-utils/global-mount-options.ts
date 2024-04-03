@@ -66,10 +66,12 @@ export const globalMountOptionsPlugin: CodemodPlugin = {
             && path.node.callee.object.type === 'Identifier'
             && path.node.callee.property.type === 'Identifier'
             && path.node.callee.object.name === 'localVue') {
+            let remove = false;
             switch (path.node.callee.property.name) {
               case 'mixin': {
                 if (path.node.arguments[0] && path.node.arguments[0].type !== 'SpreadElement') {
                   globalMixins.push(path.node.arguments[0]);
+                  remove = true;
                 }
                 break;
               }
@@ -79,6 +81,7 @@ export const globalMountOptionsPlugin: CodemodPlugin = {
                   && path.node.arguments[1]
                   && path.node.arguments[1].type !== 'SpreadElement') {
                   globalComponents.push([path.node.arguments[0], path.node.arguments[1]]);
+                  remove = true;
                 }
                 break;
               }
@@ -88,15 +91,17 @@ export const globalMountOptionsPlugin: CodemodPlugin = {
                   && path.node.arguments[1]
                   && path.node.arguments[1].type !== 'SpreadElement') {
                   globalDirectives.push([path.node.arguments[0], path.node.arguments[1]]);
+                  remove = true;
                 }
                 break;
               }
 
               default: break;
             }
-
-            path.replace();
-            return false;
+            if (remove) {
+              path.replace();
+              return false;
+            }
           }
           return this.traverse(path);
         },

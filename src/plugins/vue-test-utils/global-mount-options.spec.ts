@@ -116,3 +116,16 @@ mount(Component, {
     "
   `);
 });
+
+it('should not remove localVue calls that are not feeding the global property', () => {
+  const input = `
+localVue.nextTick();
+await localVue.nextTick();
+`;
+
+  expect(transform(input, 'file.spec.js', [globalMountOptionsPlugin]).code).toMatchInlineSnapshot(`
+    "localVue.nextTick();
+    await localVue.nextTick();
+    "
+  `);
+});
