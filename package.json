@@ -27,7 +27,7 @@
   ],
   "dependencies": {
     "change-case": "^5.4.3",
-    "vue-metamorph": "^3.1.5"
+    "vue-metamorph": "^3.1.6"
   },
   "devDependencies": {
     "@types/node": "^20.11.15",
