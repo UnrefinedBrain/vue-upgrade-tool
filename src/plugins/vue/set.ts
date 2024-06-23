@@ -101,27 +101,6 @@ export const vueSetPlugin: CodemodPlugin = {
 
     // look for $set() calls in the template
     if (sfcAST) {
-      if (sfcAST) {
-        traverseTemplateAST(sfcAST, {
-          leaveNode(node) {
-            if (node.type === 'VElement' && node.children.length) {
-              for (let i = 0; i < node.children.length; i++) {
-                const child = node.children[i]!;
-                if (child.type === 'VElement' && child.rawName === 'b-tag') {
-                  node.children[i] = builders.vElement(
-                    'bbbbbbb',
-                    builders.vStartTag([], false),
-                    [child],
-                  );
-
-                  count++;
-                }
-              }
-            }
-          },
-        });
-      }
-
       traverseTemplateAST(sfcAST, {
         enterNode(node) {
           if (node.type === 'ExpressionStatement') {
