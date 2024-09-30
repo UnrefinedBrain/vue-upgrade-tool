@@ -2,7 +2,7 @@ import { CodemodPlugin } from 'vue-metamorph';
 
 export const functionalComponentPlugin: CodemodPlugin = {
   type: 'codemod',
-  name: 'functional-component',
+  name: 'vue-functional-component',
   transform({
     scriptASTs,
     sfcAST,

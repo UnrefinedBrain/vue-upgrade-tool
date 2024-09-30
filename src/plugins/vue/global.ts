@@ -2,7 +2,7 @@ import { ManualMigrationPlugin } from 'vue-metamorph';
 
 export const vueGlobalPlugin: ManualMigrationPlugin = {
   type: 'manual',
-  name: 'vue-use',
+  name: 'vue-globals',
   find({ scriptASTs, report, utils: { traverseScriptAST } }) {
     for (const scriptAST of scriptASTs) {
       traverseScriptAST(scriptAST, {

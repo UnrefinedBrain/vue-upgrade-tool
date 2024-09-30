@@ -42,7 +42,7 @@ const isShadowedByVFor = (node?: AST.Node | null): boolean => {
 
 export const vModelPlugin: CodemodPlugin = {
   type: 'codemod',
-  name: 'v-model',
+  name: 'vue-v-model',
   transform({
     scriptASTs,
     sfcAST,

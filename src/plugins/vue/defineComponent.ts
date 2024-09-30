@@ -2,7 +2,7 @@ import { CodemodPlugin, namedTypes } from 'vue-metamorph';
 
 export const defineComponentPlugin: CodemodPlugin = {
   type: 'codemod',
-  name: 'defineComponent',
+  name: 'vue-defineComponent',
   transform({ scriptASTs, filename, utils: { traverseScriptAST, astHelpers, builders } }) {
     let count = 0;
 

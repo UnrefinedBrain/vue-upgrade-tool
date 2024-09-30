@@ -32,7 +32,7 @@ it('should warn on <router-link append>', () => {
         "lineStart": 6,
         "message": "The 'append' attribute was removed from router-link
     See: https://router.vuejs.org/guide/migration/#Removal-of-append-prop-in-router-link-",
-        "pluginName": "router-link-props",
+        "pluginName": "vue-router-link-props",
         "snippet": "3 |   <div>
     4 |     <router-link
     5 |       to="/"
@@ -50,7 +50,7 @@ it('should warn on <router-link append>', () => {
         "lineStart": 12,
         "message": "The 'append' attribute was removed from router-link
     See: https://router.vuejs.org/guide/migration/#Removal-of-append-prop-in-router-link-",
-        "pluginName": "router-link-props",
+        "pluginName": "vue-router-link-props",
         "snippet": " 9 |     </router-link>
     10 |     <RouterLink
     11 |       to="/"
@@ -106,7 +106,7 @@ it('should warn on <router-link event>', () => {
         "lineStart": 6,
         "message": "The 'event' attribute was removed from router-link
     See: https://router.vuejs.org/guide/migration/#Removal-of-event-and-tag-props-in-router-link-",
-        "pluginName": "router-link-props",
+        "pluginName": "vue-router-link-props",
         "snippet": "3 |   <div>
     4 |     <router-link
     5 |       to="/"
@@ -124,7 +124,7 @@ it('should warn on <router-link event>', () => {
         "lineStart": 12,
         "message": "The 'event' attribute was removed from router-link
     See: https://router.vuejs.org/guide/migration/#Removal-of-event-and-tag-props-in-router-link-",
-        "pluginName": "router-link-props",
+        "pluginName": "vue-router-link-props",
         "snippet": " 9 |     </router-link>
     10 |     <RouterLink
     11 |       to="/"
@@ -142,7 +142,7 @@ it('should warn on <router-link event>', () => {
         "lineStart": 18,
         "message": "The 'event' attribute was removed from router-link
     See: https://router.vuejs.org/guide/migration/#Removal-of-event-and-tag-props-in-router-link-",
-        "pluginName": "router-link-props",
+        "pluginName": "vue-router-link-props",
         "snippet": "15 |     </RouterLink>
     16 |     <router-link
     17 |       to="/"
@@ -160,7 +160,7 @@ it('should warn on <router-link event>', () => {
         "lineStart": 24,
         "message": "The 'event' attribute was removed from router-link
     See: https://router.vuejs.org/guide/migration/#Removal-of-event-and-tag-props-in-router-link-",
-        "pluginName": "router-link-props",
+        "pluginName": "vue-router-link-props",
         "snippet": "21 |     </router-link>
     22 |     <RouterLink
     23 |       to="/"
@@ -216,7 +216,7 @@ it('should warn on <router-link tag>', () => {
         "lineStart": 6,
         "message": "The 'tag' attribute was removed from router-link
     See: https://router.vuejs.org/guide/migration/#Removal-of-event-and-tag-props-in-router-link-",
-        "pluginName": "router-link-props",
+        "pluginName": "vue-router-link-props",
         "snippet": "3 |   <div>
     4 |     <router-link
     5 |       to="/"
@@ -234,7 +234,7 @@ it('should warn on <router-link tag>', () => {
         "lineStart": 12,
         "message": "The 'tag' attribute was removed from router-link
     See: https://router.vuejs.org/guide/migration/#Removal-of-event-and-tag-props-in-router-link-",
-        "pluginName": "router-link-props",
+        "pluginName": "vue-router-link-props",
         "snippet": " 9 |     </router-link>
     10 |     <RouterLink
     11 |       to="/"
@@ -252,7 +252,7 @@ it('should warn on <router-link tag>', () => {
         "lineStart": 18,
         "message": "The 'tag' attribute was removed from router-link
     See: https://router.vuejs.org/guide/migration/#Removal-of-event-and-tag-props-in-router-link-",
-        "pluginName": "router-link-props",
+        "pluginName": "vue-router-link-props",
         "snippet": "15 |     </RouterLink>
     16 |     <router-link
     17 |       to="/"
@@ -270,7 +270,7 @@ it('should warn on <router-link tag>', () => {
         "lineStart": 24,
         "message": "The 'tag' attribute was removed from router-link
     See: https://router.vuejs.org/guide/migration/#Removal-of-event-and-tag-props-in-router-link-",
-        "pluginName": "router-link-props",
+        "pluginName": "vue-router-link-props",
         "snippet": "21 |     </router-link>
     22 |     <RouterLink
     23 |       to="/"
@@ -326,7 +326,7 @@ it('should warn on <router-link tag>', () => {
         "lineStart": 6,
         "message": "The 'exact' attribute was removed from router-link
     See: https://router.vuejs.org/guide/migration/#Removal-of-the-exact-prop-in-router-link-",
-        "pluginName": "router-link-props",
+        "pluginName": "vue-router-link-props",
         "snippet": "3 |   <div>
     4 |     <router-link
     5 |       to="/"
@@ -344,7 +344,7 @@ it('should warn on <router-link tag>', () => {
         "lineStart": 12,
         "message": "The 'exact' attribute was removed from router-link
     See: https://router.vuejs.org/guide/migration/#Removal-of-the-exact-prop-in-router-link-",
-        "pluginName": "router-link-props",
+        "pluginName": "vue-router-link-props",
         "snippet": " 9 |     </router-link>
     10 |     <RouterLink
     11 |       to="/"
@@ -362,7 +362,7 @@ it('should warn on <router-link tag>', () => {
         "lineStart": 18,
         "message": "The 'exact' attribute was removed from router-link
     See: https://router.vuejs.org/guide/migration/#Removal-of-the-exact-prop-in-router-link-",
-        "pluginName": "router-link-props",
+        "pluginName": "vue-router-link-props",
         "snippet": "15 |     </RouterLink>
     16 |     <router-link
     17 |       to="/"
@@ -380,7 +380,7 @@ it('should warn on <router-link tag>', () => {
         "lineStart": 24,
         "message": "The 'exact' attribute was removed from router-link
     See: https://router.vuejs.org/guide/migration/#Removal-of-the-exact-prop-in-router-link-",
-        "pluginName": "router-link-props",
+        "pluginName": "vue-router-link-props",
         "snippet": "21 |     </router-link>
     22 |     <RouterLink
     23 |       to="/"

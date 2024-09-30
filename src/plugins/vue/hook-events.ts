@@ -2,7 +2,7 @@ import { CodemodPlugin } from 'vue-metamorph';
 
 export const hookEventsPlugin: CodemodPlugin = {
   type: 'codemod',
-  name: 'hook-events',
+  name: 'vue-hook-events',
   transform({ sfcAST, utils: { traverseTemplateAST } }) {
     let count = 0;
 

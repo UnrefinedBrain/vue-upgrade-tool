@@ -3,7 +3,7 @@ import * as changeCase from 'change-case';
 
 export const transitionGroupRootElementPlugin: CodemodPlugin = {
   type: 'codemod',
-  name: 'transition-group-root-element',
+  name: 'vue-transition-group-root-element',
   transform({ sfcAST, utils: { traverseTemplateAST, builders } }) {
     let count = 0;
 

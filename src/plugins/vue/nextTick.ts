@@ -2,7 +2,7 @@ import { CodemodPlugin } from 'vue-metamorph';
 
 export const nextTickPlugin: CodemodPlugin = {
   type: 'codemod',
-  name: 'nextTick',
+  name: 'vue-nextTick',
   transform({ scriptASTs, utils: { astHelpers, builders } }) {
     let count = 0;
 

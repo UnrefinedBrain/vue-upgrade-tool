@@ -30,7 +30,7 @@ export default {
         "lineStart": 7,
         "message": "Props default functions can no longer access \`this\`
     See: https://v3-migration.vuejs.org/breaking-changes/props-default-this.html",
-        "pluginName": "props-default-this",
+        "pluginName": "vue-props-default-this",
         "snippet": " 4 |   props: {
      5 |     foo: {
      6 |       default() {

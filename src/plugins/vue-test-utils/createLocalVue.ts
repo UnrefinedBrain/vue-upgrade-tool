@@ -3,7 +3,7 @@ import { isTestFile } from './utils';
 
 export const createLocalVuePlugin: ManualMigrationPlugin = {
   type: 'manual',
-  name: 'createLocalVue',
+  name: 'test-utils-createLocalVue',
   find({
     scriptASTs,
     filename,

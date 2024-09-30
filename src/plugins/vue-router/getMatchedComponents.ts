@@ -35,7 +35,7 @@ const replacement = () => sb.callExpression(
 
 export const getMatchedComponentsPlugin: CodemodPlugin = {
   type: 'codemod',
-  name: 'getMatchedComponents',
+  name: 'vue-router-getMatchedComponents',
   transform({ scriptASTs, utils: { traverseScriptAST } }) {
     let count = 0;
 

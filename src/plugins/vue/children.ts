@@ -2,7 +2,7 @@ import { ManualMigrationPlugin } from 'vue-metamorph';
 
 export const childrenPlugin: ManualMigrationPlugin = {
   type: 'manual',
-  name: 'children',
+  name: 'vue-$children',
   find({
     scriptASTs,
     sfcAST,

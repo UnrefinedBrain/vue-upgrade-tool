@@ -3,7 +3,7 @@ import * as changeCase from 'change-case';
 
 export const routerViewSlotContentPlugin: CodemodPlugin = {
   type: 'codemod',
-  name: 'router-view-slot-content',
+  name: 'vue-router-view-slot-content',
   transform({
     sfcAST,
     utils: {

@@ -25,7 +25,7 @@ it('should report on "is" attribute usage on non-component tags', () => {
         "lineStart": 4,
         "message": "The 'is' attribute can only be used on a <component> tag
     See: https://v3-migration.vuejs.org/breaking-changes/custom-elements-interop.html#customized-built-in-elements",
-        "pluginName": "is-attribute",
+        "pluginName": "vue-is-attribute",
         "snippet": "1 | 
     2 | <template>
     3 |   <div>
@@ -43,7 +43,7 @@ it('should report on "is" attribute usage on non-component tags', () => {
         "lineStart": 5,
         "message": "The 'is' attribute can only be used on a <component> tag
     See: https://v3-migration.vuejs.org/breaking-changes/custom-elements-interop.html#customized-built-in-elements",
-        "pluginName": "is-attribute",
+        "pluginName": "vue-is-attribute",
         "snippet": "2 | <template>
     3 |   <div>
     4 |     <RouterLink is="a" />

@@ -3,7 +3,7 @@ import { isTestFile } from './utils';
 
 export const wrapperDestroyCodemodPlugin: CodemodPlugin = {
   type: 'codemod',
-  name: 'wrapper-destroy',
+  name: 'test-utils-wrapper-destroy',
   transform({ scriptASTs, filename, utils }) {
     if (!isTestFile(filename)) {
       return 0;
@@ -41,7 +41,7 @@ export const wrapperDestroyCodemodPlugin: CodemodPlugin = {
 
 export const wrapperDestroyManualMigrationPlugin: ManualMigrationPlugin = {
   type: 'manual',
-  name: 'wrapper-destroy-manual',
+  name: 'test-utils-wrapper-destroy-manual',
   find({
     scriptASTs,
     filename,

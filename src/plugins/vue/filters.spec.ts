@@ -27,7 +27,7 @@ export default {
         "lineStart": 4,
         "message": "Filters have been removed.
     See: https://v3-migration.vuejs.org/breaking-changes/filters.html#filters",
-        "pluginName": "filters",
+        "pluginName": "vue-filters",
         "snippet": "1 | 
     2 | <template>
     3 |   <div>

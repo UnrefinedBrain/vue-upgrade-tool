@@ -2,7 +2,7 @@ import { ManualMigrationPlugin } from 'vue-metamorph';
 
 export const filtersPlugin: ManualMigrationPlugin = {
   type: 'manual',
-  name: 'filters',
+  name: 'vue-filters',
   find({ sfcAST, report, utils: { astHelpers } }) {
     if (sfcAST) {
       astHelpers.findAll(sfcAST, {

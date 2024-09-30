@@ -2,7 +2,7 @@ import { CodemodPlugin } from 'vue-metamorph';
 
 export const eventListenersNativePlugin: CodemodPlugin = {
   type: 'codemod',
-  name: 'v-on-native',
+  name: 'vue-v-on-native',
   transform({ sfcAST, utils: { traverseTemplateAST } }) {
     let count = 0;
 

@@ -25,7 +25,7 @@ wrapper.setMethods({});
         "lineStart": 2,
         "message": "wrapper.contains was removed.
     See: https://test-utils.vuejs.org/migration/#Wrapper-API-mount-",
-        "pluginName": "removed-wrapper-apis",
+        "pluginName": "test-utils-removed-wrapper-apis",
         "snippet": "1 | 
     2 | wrapper.contains('div');
       | ^^^^^^^^^^^^^^^^^^^^^^^
@@ -41,7 +41,7 @@ wrapper.setMethods({});
         "lineStart": 3,
         "message": "wrapper.emittedByOrder was removed.
     See: https://test-utils.vuejs.org/migration/#Wrapper-API-mount-",
-        "pluginName": "removed-wrapper-apis",
+        "pluginName": "test-utils-removed-wrapper-apis",
         "snippet": "1 | 
     2 | wrapper.contains('div');
     3 | wrapper.emittedByOrder();
@@ -58,7 +58,7 @@ wrapper.setMethods({});
         "lineStart": 4,
         "message": "wrapper.setSelected was removed.
     See: https://test-utils.vuejs.org/migration/#Wrapper-API-mount-",
-        "pluginName": "removed-wrapper-apis",
+        "pluginName": "test-utils-removed-wrapper-apis",
         "snippet": "1 | 
     2 | wrapper.contains('div');
     3 | wrapper.emittedByOrder();
@@ -76,7 +76,7 @@ wrapper.setMethods({});
         "lineStart": 5,
         "message": "wrapper.setChecked was removed.
     See: https://test-utils.vuejs.org/migration/#Wrapper-API-mount-",
-        "pluginName": "removed-wrapper-apis",
+        "pluginName": "test-utils-removed-wrapper-apis",
         "snippet": "2 | wrapper.contains('div');
     3 | wrapper.emittedByOrder();
     4 | wrapper.setSelected(true);
@@ -94,7 +94,7 @@ wrapper.setMethods({});
         "lineStart": 6,
         "message": "wrapper.is was removed.
     See: https://test-utils.vuejs.org/migration/#Wrapper-API-mount-",
-        "pluginName": "removed-wrapper-apis",
+        "pluginName": "test-utils-removed-wrapper-apis",
         "snippet": "3 | wrapper.emittedByOrder();
     4 | wrapper.setSelected(true);
     5 | wrapper.setChecked(true);
@@ -112,7 +112,7 @@ wrapper.setMethods({});
         "lineStart": 7,
         "message": "wrapper.isEmpty was removed.
     See: https://test-utils.vuejs.org/migration/#Wrapper-API-mount-",
-        "pluginName": "removed-wrapper-apis",
+        "pluginName": "test-utils-removed-wrapper-apis",
         "snippet": " 4 | wrapper.setSelected(true);
      5 | wrapper.setChecked(true);
      6 | wrapper.is('div');
@@ -130,7 +130,7 @@ wrapper.setMethods({});
         "lineStart": 8,
         "message": "wrapper.isVueInstance was removed.
     See: https://test-utils.vuejs.org/migration/#Wrapper-API-mount-",
-        "pluginName": "removed-wrapper-apis",
+        "pluginName": "test-utils-removed-wrapper-apis",
         "snippet": " 5 | wrapper.setChecked(true);
      6 | wrapper.is('div');
      7 | wrapper.isEmpty();
@@ -148,7 +148,7 @@ wrapper.setMethods({});
         "lineStart": 9,
         "message": "wrapper.name was removed.
     See: https://test-utils.vuejs.org/migration/#Wrapper-API-mount-",
-        "pluginName": "removed-wrapper-apis",
+        "pluginName": "test-utils-removed-wrapper-apis",
         "snippet": " 6 | wrapper.is('div');
      7 | wrapper.isEmpty();
      8 | wrapper.isVueInstance();
@@ -165,7 +165,7 @@ wrapper.setMethods({});
         "lineStart": 10,
         "message": "wrapper.setMethods was removed.
     See: https://test-utils.vuejs.org/migration/#Wrapper-API-mount-",
-        "pluginName": "removed-wrapper-apis",
+        "pluginName": "test-utils-removed-wrapper-apis",
         "snippet": " 7 | wrapper.isEmpty();
      8 | wrapper.isVueInstance();
      9 | wrapper.name;

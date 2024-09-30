@@ -7,7 +7,7 @@ const replace: Record<string, string> = {
 
 export const lifecycleHookPlugin: CodemodPlugin = {
   type: 'codemod',
-  name: 'lifecycle-hooks',
+  name: 'vue-lifecycle-hooks',
   transform({ scriptASTs, filename, utils: { astHelpers } }) {
     let count = 0;
 

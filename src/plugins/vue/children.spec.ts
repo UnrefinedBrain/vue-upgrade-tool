@@ -29,7 +29,7 @@ export default {
         "lineStart": 11,
         "message": "$children has been removed.
     See: https://v3-migration.vuejs.org/breaking-changes/children.html#children",
-        "pluginName": "children",
+        "pluginName": "vue-$children",
         "snippet": " 8 | <script>
      9 | export default {
     10 |   created() {
@@ -47,7 +47,7 @@ export default {
         "lineStart": 4,
         "message": "$children has been removed.
     See: https://v3-migration.vuejs.org/breaking-changes/children.html#children",
-        "pluginName": "children",
+        "pluginName": "vue-$children",
         "snippet": "1 | 
     2 | <template>
     3 |   <div>

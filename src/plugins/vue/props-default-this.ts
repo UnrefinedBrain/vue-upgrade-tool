@@ -2,7 +2,7 @@ import { ManualMigrationPlugin } from 'vue-metamorph';
 
 export const propsDefaultThisPlugin: ManualMigrationPlugin = {
   type: 'manual',
-  name: 'props-default-this',
+  name: 'vue-props-default-this',
   find({
     scriptASTs,
     filename,

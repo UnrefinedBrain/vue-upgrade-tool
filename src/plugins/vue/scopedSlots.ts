@@ -2,7 +2,7 @@ import { CodemodPlugin } from 'vue-metamorph';
 
 export const scopedSlotsPlugin: CodemodPlugin = {
   type: 'codemod',
-  name: 'scoped-slots',
+  name: 'vue-scoped-slots',
   transform({ scriptASTs, sfcAST, utils: { astHelpers, builders } }) {
     let count = 0;
     for (const scriptAST of scriptASTs) {

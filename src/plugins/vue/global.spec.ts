@@ -25,7 +25,7 @@ Vue.prototype.something = () => {
         "lineStart": 2,
         "message": "Move Vue.use() to chain from createApp()
     See: https://v3-migration.vuejs.org/breaking-changes/global-api.html#global-api-application-instance",
-        "pluginName": "vue-use",
+        "pluginName": "vue-globals",
         "snippet": "1 | 
     2 | Vue.use(SomePlugin);
       | ^^^^^^^^^^^^^^^^^^^
@@ -41,7 +41,7 @@ Vue.prototype.something = () => {
         "lineStart": 3,
         "message": "Move Vue.directive() to chain from createApp()
     See: https://v3-migration.vuejs.org/breaking-changes/global-api.html#global-api-application-instance",
-        "pluginName": "vue-use",
+        "pluginName": "vue-globals",
         "snippet": "1 | 
     2 | Vue.use(SomePlugin);
     3 | Vue.directive({});
@@ -58,7 +58,7 @@ Vue.prototype.something = () => {
         "lineStart": 4,
         "message": "Move Vue.component() to chain from createApp()
     See: https://v3-migration.vuejs.org/breaking-changes/global-api.html#global-api-application-instance",
-        "pluginName": "vue-use",
+        "pluginName": "vue-globals",
         "snippet": "1 | 
     2 | Vue.use(SomePlugin);
     3 | Vue.directive({});
@@ -76,7 +76,7 @@ Vue.prototype.something = () => {
         "lineStart": 5,
         "message": "Move Vue.mixin() to chain from createApp()
     See: https://v3-migration.vuejs.org/breaking-changes/global-api.html#global-api-application-instance",
-        "pluginName": "vue-use",
+        "pluginName": "vue-globals",
         "snippet": "2 | Vue.use(SomePlugin);
     3 | Vue.directive({});
     4 | Vue.component({});
@@ -93,7 +93,7 @@ Vue.prototype.something = () => {
         "lineEnd": 8,
         "lineStart": 8,
         "message": "Move Vue.prototype assignment to createApp().config.globalProperties",
-        "pluginName": "vue-use",
+        "pluginName": "vue-globals",
         "snippet": " 5 | Vue.mixin({});
      6 | Vue.config.whatever
      7 | 

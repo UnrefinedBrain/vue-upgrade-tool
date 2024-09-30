@@ -65,7 +65,7 @@ export default {
         "lineStart": 10,
         "message": "$listeners has been removed.
     See: https://v3-migration.vuejs.org/breaking-changes/listeners-removed.html#listeners-removed",
-        "pluginName": "remove-listeners",
+        "pluginName": "vue-remove-$listeners-manual",
         "snippet": " 7 | export default {
      8 |   computed: {
      9 |     hasCloseListener() {
@@ -83,7 +83,7 @@ export default {
         "lineStart": 3,
         "message": "$listeners has been removed.
     See: https://v3-migration.vuejs.org/breaking-changes/listeners-removed.html#listeners-removed",
-        "pluginName": "remove-listeners",
+        "pluginName": "vue-remove-$listeners-manual",
         "snippet": "1 | 
     2 | <template>
     3 |   <div>Has close listener: {{ !!$listeners.close }}</div>

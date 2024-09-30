@@ -24,7 +24,7 @@ it('should report when v-if and v-for are used together', () => {
         "lineStart": 3,
         "message": "v-if/v-for precedence has changed
     See: https://v3-migration.vuejs.org/breaking-changes/v-if-v-for.html",
-        "pluginName": "if-for-precedence",
+        "pluginName": "vue-if-for-precedence",
         "snippet": "1 | 
     2 | <template>
     3 |   <div

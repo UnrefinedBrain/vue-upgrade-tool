@@ -19,7 +19,7 @@ localVue.mixin(MyMixin);
         "lineStart": 2,
         "message": "localVue was removed
     See: https://test-utils.vuejs.org/migration/#No-more-createLocalVue",
-        "pluginName": "createLocalVue",
+        "pluginName": "test-utils-createLocalVue",
         "snippet": "1 | 
     2 | const localVue = createLocalVue();
       |       ^^^^^^^^
@@ -35,7 +35,7 @@ localVue.mixin(MyMixin);
         "lineStart": 3,
         "message": "localVue was removed
     See: https://test-utils.vuejs.org/migration/#No-more-createLocalVue",
-        "pluginName": "createLocalVue",
+        "pluginName": "test-utils-createLocalVue",
         "snippet": "1 | 
     2 | const localVue = createLocalVue();
     3 | localVue.use(MyPlugin);
@@ -51,7 +51,7 @@ localVue.mixin(MyMixin);
         "lineStart": 4,
         "message": "localVue was removed
     See: https://test-utils.vuejs.org/migration/#No-more-createLocalVue",
-        "pluginName": "createLocalVue",
+        "pluginName": "test-utils-createLocalVue",
         "snippet": "1 | 
     2 | const localVue = createLocalVue();
     3 | localVue.use(MyPlugin);
@@ -67,7 +67,7 @@ localVue.mixin(MyMixin);
         "lineStart": 2,
         "message": "localVue was removed
     See: https://test-utils.vuejs.org/migration/#No-more-createLocalVue",
-        "pluginName": "createLocalVue",
+        "pluginName": "test-utils-createLocalVue",
         "snippet": "1 | 
     2 | const localVue = createLocalVue();
       |                  ^^^^^^^^^^^^^^^^

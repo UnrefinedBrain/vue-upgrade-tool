@@ -2,7 +2,7 @@ import { ManualMigrationPlugin } from 'vue-metamorph';
 
 export const routerAppPlugin: ManualMigrationPlugin = {
   type: 'manual',
-  name: 'router.app',
+  name: 'vue-router-router.app',
   find({
     scriptASTs,
     sfcAST,

@@ -3,7 +3,7 @@ import { findMounts, isTestFile } from './utils';
 
 export const scopedSlotsMountPlugin: CodemodPlugin = {
   type: 'codemod',
-  name: 'scoped-slots-mount-option',
+  name: 'test-utils-scoped-slots-mount-option',
   transform({ scriptASTs, filename, utils: { builders } }) {
     if (!isTestFile(filename)) {
       return 0;

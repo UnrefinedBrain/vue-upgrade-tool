@@ -2,7 +2,7 @@ import { CodemodPlugin, ManualMigrationPlugin } from 'vue-metamorph';
 
 export const removeListenersCodemodPlugin: CodemodPlugin = {
   type: 'codemod',
-  name: 'remove-listeners',
+  name: 'vue-remove-$listeners',
   transform({ sfcAST, utils: { astHelpers, traverseTemplateAST } }) {
     let count = 0;
 
@@ -37,7 +37,7 @@ export const removeListenersCodemodPlugin: CodemodPlugin = {
 
 export const removeListenersManualMigrationPlugin: ManualMigrationPlugin = {
   type: 'manual',
-  name: 'remove-listeners',
+  name: 'vue-remove-$listeners-manual',
   find({
     scriptASTs,
     sfcAST,

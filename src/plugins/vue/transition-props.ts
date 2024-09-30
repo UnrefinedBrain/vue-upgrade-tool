@@ -7,7 +7,7 @@ const replacements: Record<string, string> = {
 
 export const transitionPropsPlugin: CodemodPlugin = {
   type: 'codemod',
-  name: 'transition-props',
+  name: 'vue-transition-props',
   transform({ sfcAST, styleASTs, utils: { traverseTemplateAST } }) {
     let count = 0;
 

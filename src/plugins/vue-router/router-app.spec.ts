@@ -30,7 +30,7 @@ export default {
         "lineStart": 3,
         "message": "router.app was removed.
     See: https://router.vuejs.org/guide/migration/#Removal-of-router-app",
-        "pluginName": "router.app",
+        "pluginName": "vue-router-router.app",
         "snippet": "1 | 
     2 | <template>
     3 |   <div>{{ $router.app.$data.title }}</div>
@@ -47,7 +47,7 @@ export default {
         "lineStart": 11,
         "message": "router.app was removed.
     See: https://router.vuejs.org/guide/migration/#Removal-of-router-app",
-        "pluginName": "router.app",
+        "pluginName": "vue-router-router.app",
         "snippet": " 8 | 
      9 | export default {
     10 |   created() {
@@ -65,7 +65,7 @@ export default {
         "lineStart": 12,
         "message": "router.app was removed.
     See: https://router.vuejs.org/guide/migration/#Removal-of-router-app",
-        "pluginName": "router.app",
+        "pluginName": "vue-router-router.app",
         "snippet": " 9 | export default {
     10 |   created() {
     11 |     router.app.$data.title;

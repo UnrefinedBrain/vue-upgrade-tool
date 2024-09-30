@@ -3,7 +3,7 @@ import { findMounts, isTestFile } from './utils';
 
 export const propsDataTestPlugin: CodemodPlugin = {
   type: 'codemod',
-  name: 'propsData',
+  name: 'test-utils-propsData',
   transform({ scriptASTs, filename, utils: { builders } }) {
     if (!isTestFile(filename)) {
       return 0;

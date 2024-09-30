@@ -2,7 +2,7 @@ import { CodemodPlugin } from 'vue-metamorph';
 
 export const dataFunctionPlugin: CodemodPlugin = {
   type: 'codemod',
-  name: 'data-function',
+  name: 'vue-data-function',
   transform({ scriptASTs, utils: { traverseScriptAST, builders } }) {
     let count = 0;
 

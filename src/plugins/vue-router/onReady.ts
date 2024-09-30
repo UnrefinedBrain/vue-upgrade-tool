@@ -2,7 +2,7 @@ import { CodemodPlugin } from 'vue-metamorph';
 
 export const onReadyPlugin: CodemodPlugin = {
   type: 'codemod',
-  name: 'router-onReady',
+  name: 'vue-router-onReady',
   transform({ scriptASTs, utils: { builders, traverseScriptAST } }) {
     let count = 0;
     for (const scriptAST of scriptASTs) {

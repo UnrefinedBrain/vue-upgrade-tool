@@ -2,7 +2,7 @@ import { CodemodPlugin, namedTypes } from 'vue-metamorph';
 
 export const contextualHPlugin: CodemodPlugin = {
   type: 'codemod',
-  name: 'contextual-h',
+  name: 'vue-contextual-h',
   transform({ scriptASTs, utils: { traverseScriptAST, builders, astHelpers } }) {
     let count = 0;
 

@@ -3,7 +3,7 @@ import * as changeCase from 'change-case';
 
 export const routerLinkPropsPlugin: ManualMigrationPlugin = {
   type: 'manual',
-  name: 'router-link-props',
+  name: 'vue-router-link-props',
   find({ sfcAST, report, utils: { traverseTemplateAST } }) {
     if (sfcAST) {
       traverseTemplateAST(sfcAST, {

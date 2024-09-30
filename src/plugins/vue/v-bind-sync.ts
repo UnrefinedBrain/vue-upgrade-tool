@@ -2,7 +2,7 @@ import { CodemodPlugin } from 'vue-metamorph';
 
 export const vBindSyncPlugin: CodemodPlugin = {
   type: 'codemod',
-  name: 'v-bind-sync',
+  name: 'vue-v-bind-sync',
   transform({ sfcAST, utils: { astHelpers } }) {
     let count = 0;
 

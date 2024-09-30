@@ -4,7 +4,7 @@ const vDeepRegex = /(.*?)( +)?(?:(?::{1,2}v-deep)|(?:\/deep\/)) ?(>)? ?(.*)/s;
 
 export const vDeepPlugin: CodemodPlugin = {
   type: 'codemod',
-  name: 'v-deep',
+  name: 'vue-v-deep',
   transform({ styleASTs }) {
     let count = 0;
 

@@ -35,7 +35,7 @@ weirdNameWeDontKnowAbout.destroy();
         "lineStart": 8,
         "message": "Possibly rename destroy() to unmount()
     See: https://test-utils.vuejs.org/migration/#destroy-is-now-unmount-to-match-Vue-3",
-        "pluginName": "wrapper-destroy-manual",
+        "pluginName": "test-utils-wrapper-destroy-manual",
         "snippet": "5 |   }
     6 | };
     7 | 

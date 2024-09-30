@@ -3,7 +3,7 @@ import { isTestFile } from './utils';
 
 export const removedWrapperApisPlugin: ManualMigrationPlugin = {
   type: 'manual',
-  name: 'removed-wrapper-apis',
+  name: 'test-utils-removed-wrapper-apis',
   find({
     scriptASTs,
     filename,

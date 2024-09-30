@@ -17,7 +17,7 @@ router.match();
         "lineStart": 2,
         "message": "router.match() was removed
     See: https://router.vuejs.org/guide/migration/#Removal-of-router-match-and-changes-to-router-resolve",
-        "pluginName": "router-match",
+        "pluginName": "vue-router-match",
         "snippet": "1 | 
     2 | router.match();
       | ^^^^^^^^^^^^^^

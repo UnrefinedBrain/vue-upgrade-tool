@@ -20,7 +20,7 @@ const getGlobalObject = (node: namedTypes.ObjectExpression) => {
 
 export const globalMountOptionsPlugin: CodemodPlugin = {
   type: 'codemod',
-  name: 'global-mount-options',
+  name: 'test-utils-global-mount-options',
   transform({ scriptASTs, filename, utils: { traverseScriptAST } }) {
     if (!isTestFile(filename)) {
       return 0;
