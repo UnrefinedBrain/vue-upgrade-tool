@@ -20,6 +20,7 @@ import { propsDefaultThisPlugin } from './props-default-this';
 import { vModelPlugin } from './v-model';
 import { isAttributePlugin } from './is-attribute';
 import { vDeepPlugin } from './v-deep';
+import { arrayWatchPlugin } from './array-watch';
 
 export const vue = (): Plugin[] => ([
   vueSetPlugin,
@@ -45,4 +46,5 @@ export const vue = (): Plugin[] => ([
   vModelPlugin,
   isAttributePlugin,
   vDeepPlugin,
+  arrayWatchPlugin,
 ]);
