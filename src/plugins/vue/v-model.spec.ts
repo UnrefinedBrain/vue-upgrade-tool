@@ -147,6 +147,9 @@ it('should convert v-on:input to v-on:update:modelValue', () => {
   <div>
     <MyButton @input="console.log">Set value to 5</MyButton>
     <input @input="console.log" />
+    <div contenteditable="true" @input="console.log">hello</div>
+    <div contenteditable @input="console.log">hello</div>
+    <div @input="console.log">hello</div>
   </div>
 </template>
 <script>
@@ -162,6 +165,9 @@ export default {
       <div>
         <MyButton @update:modelValue="console.log">Set value to 5</MyButton>
         <input @input="console.log" />
+        <div contenteditable="true" @input="console.log">hello</div>
+        <div contenteditable @input="console.log">hello</div>
+        <div @update:modelValue="console.log">hello</div>
       </div>
     </template>
     <script>

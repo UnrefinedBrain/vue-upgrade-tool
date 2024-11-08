@@ -10,6 +10,27 @@ const elementsWithValue = [
   'param',
 ];
 
+const isContentEditable = (node: AST.VElement): boolean => {
+  for (const attr of node.startTag.attributes) {
+    // v-bind:contenteditable
+    if (attr.directive
+      && attr.key.name.name === 'bind'
+      && attr.key.argument?.type === 'VIdentifier'
+      && attr.key.argument.name === 'contenteditable') {
+      return true;
+    }
+
+    if (!attr.directive
+      && attr.key.name === 'contenteditable'
+      && (!attr.value || attr.value.value === 'true')
+    ) {
+      return true;
+    }
+  }
+
+  return false;
+};
+
 const isShadowedByFunction = (node?: AST.Node | null): boolean => {
   if (!node) {
     return false;
@@ -170,7 +191,8 @@ export const vModelPlugin: CodemodPlugin = {
             && node.key.name.name === 'on'
             && node.key.argument?.type === 'VIdentifier'
             && node.key.argument.name === 'input'
-            && !elementsWithValue.includes(node.parent.parent.name)) {
+            && !elementsWithValue.includes(node.parent.parent.name)
+            && !isContentEditable(node.parent.parent)) {
             node.key.argument.rawName = 'update:modelValue';
             count++;
           }
