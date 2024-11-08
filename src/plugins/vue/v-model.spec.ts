@@ -29,6 +29,9 @@ it('should convert this.value to this.modelValue', () => {
   const input = `
 <script>
 export default {
+  props: {
+    value: Number,
+  },
   methods: {
     log() {
       const twoPlaces = this.value.toFixed(2);
@@ -43,6 +46,9 @@ export default {
     "
     <script>
     export default {
+      props: {
+        modelValue: Number,
+      },
       methods: {
         log() {
           const twoPlaces = this.modelValue.toFixed(2);
@@ -203,7 +209,9 @@ it('should update value to modelValue in the template', () => {
 </template>
 <script>
 export default {
-  
+  props: {
+    value: Object,
+  },
 };
 </script>
 `;
@@ -230,7 +238,9 @@ export default {
     </template>
     <script>
     export default {
-      
+      props: {
+        modelValue: Object,
+      },
     };
     </script>
     "
@@ -241,6 +251,9 @@ it('should update watcher names', () => {
   const input = `
 <script>
 export default {
+  props: {
+    value: Object,
+  },
   watch: {
     value() {
 
@@ -261,6 +274,9 @@ export default {
     "
     <script>
     export default {
+      props: {
+        modelValue: Object,
+      },
       watch: {
         modelValue() {
 

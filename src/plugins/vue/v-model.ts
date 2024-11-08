@@ -75,7 +75,7 @@ export const vModelPlugin: CodemodPlugin = {
     },
   }) {
     let count = 0;
-
+    let hasValueProp = false;
     for (const scriptAST of scriptASTs) {
       // 1. rename 'value' prop to 'modelValue'
       astHelpers
@@ -90,6 +90,7 @@ export const vModelPlugin: CodemodPlugin = {
                 if (prop.type === 'Property'
                   && prop.key.type === 'Identifier'
                   && prop.key.name === 'value') {
+                  hasValueProp = true;
                   prop.key.name = 'modelValue';
                   count++;
                 }
@@ -97,8 +98,10 @@ export const vModelPlugin: CodemodPlugin = {
 
               break;
             }
-
-            if (option.type === 'Property'
+          }
+          for (const option of node.properties) {
+            if (hasValueProp
+              && option.type === 'Property'
               && option.key.type === 'Identifier'
               && option.key.name === 'watch'
               && option.value.type === 'ObjectExpression') {
@@ -122,21 +125,23 @@ export const vModelPlugin: CodemodPlugin = {
         });
 
       // 2. this.value --> this.modelValue
-      astHelpers.findAll(scriptAST, {
-        type: 'MemberExpression',
-        object: {
-          type: 'ThisExpression',
-        },
-        property: {
-          type: 'Identifier',
-          name: 'value',
-        },
-      }).forEach((node) => {
-        if (node.property.type === 'Identifier') {
-          node.property.name = 'modelValue';
-          count++;
-        }
-      });
+      if (hasValueProp) {
+        astHelpers.findAll(scriptAST, {
+          type: 'MemberExpression',
+          object: {
+            type: 'ThisExpression',
+          },
+          property: {
+            type: 'Identifier',
+            name: 'value',
+          },
+        }).forEach((node) => {
+          if (node.property.type === 'Identifier') {
+            node.property.name = 'modelValue';
+            count++;
+          }
+        });
+      }
 
       // 3. this.$emit('input') --> this.$emit('modelValue')
       astHelpers.findAll(scriptAST, {
@@ -198,7 +203,7 @@ export const vModelPlugin: CodemodPlugin = {
           }
 
           // 7. 'value' in template
-          if (node.type === 'Identifier' && node.name === 'value') {
+          if (hasValueProp && node.type === 'Identifier' && node.name === 'value') {
             if (node.parent?.type === 'MemberExpression'
               && node.parent.property === node) {
               return;
