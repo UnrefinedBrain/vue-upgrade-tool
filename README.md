@@ -37,7 +37,6 @@ npx vue-upgrade-tool --files 'src/**/*' --plugins 'vue-*' --plugins 'test-utils-
 | Plugin | Plugin Name | Migration Type | Migration Guide |
 | - | - | - | - |
 | [array watchers should be deep](./src/plugins/vue/array-watch.spec.ts) | `array-watch` | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/watch.html) |
-
 | [`data` option must return a function](./src/plugins/vue/data-function.spec.ts) | `vue-data-function` | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/data-option.html) |
 | [component options wrapped with `defineComponent()`](./src/plugins/vue/defineComponent.spec.ts) | `vue-defineComponent` | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/global-api.html#type-inference) |
 | [`Vue.delete()` / `this.$delete()` rewritten to `delete` expression](./src/plugins/vue/delete.spec.ts) | `vue-delete` | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/#removed-apis) |
