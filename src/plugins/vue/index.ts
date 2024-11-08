@@ -21,6 +21,7 @@ import { vModelPlugin } from './v-model';
 import { isAttributePlugin } from './is-attribute';
 import { vDeepPlugin } from './v-deep';
 import { arrayWatchPlugin } from './array-watch';
+import { emitsNonSfcPlugin, emitsSfcPlugin } from './emits';
 
 export const vue = (): Plugin[] => ([
   vueSetPlugin,
@@ -47,4 +48,6 @@ export const vue = (): Plugin[] => ([
   isAttributePlugin,
   vDeepPlugin,
   arrayWatchPlugin,
+  emitsSfcPlugin,
+  emitsNonSfcPlugin,
 ]);

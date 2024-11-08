@@ -36,6 +36,7 @@ npx vue-upgrade-tool --files 'src/**/*' --plugins 'vue-*' --plugins 'test-utils-
 
 | Plugin | Plugin Name | Migration Type | Migration Guide |
 | - | - | - | - |
+| [new emits option](./src/plugins/vue/emits.spec.ts) | `emits-sfc` / `emits-non-sfc` | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/emits-option.html) |
 | [array watchers should be deep](./src/plugins/vue/array-watch.spec.ts) | `array-watch` | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/watch.html) |
 | [`data` option must return a function](./src/plugins/vue/data-function.spec.ts) | `vue-data-function` | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/data-option.html) |
 | [component options wrapped with `defineComponent()`](./src/plugins/vue/defineComponent.spec.ts) | `vue-defineComponent` | automatic | [Link](https://v3-migration.vuejs.org/breaking-changes/global-api.html#type-inference) |
