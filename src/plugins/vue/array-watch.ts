@@ -261,7 +261,6 @@ export const arrayWatchPlugin: CodemodPlugin = {
   transform({ scriptASTs, utils: { astHelpers }, filename }) {
     let count = 0;
     for (const scriptAST of scriptASTs) {
-      count++;
       const optionsBlocks = astHelpers.findVueComponentOptions(scriptAST, filename.endsWith('.vue'));
       for (const block of optionsBlocks) {
         const props = findBlock(block, 'props');
