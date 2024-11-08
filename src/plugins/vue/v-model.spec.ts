@@ -150,6 +150,7 @@ it('should convert v-on:input to v-on:update:modelValue', () => {
     <div contenteditable="true" @input="console.log">hello</div>
     <div contenteditable @input="console.log">hello</div>
     <div @input="console.log">hello</div>
+    <div :contenteditable="maybe" @input="console.log">hello</div>
   </div>
 </template>
 <script>
@@ -168,6 +169,7 @@ export default {
         <div contenteditable="true" @input="console.log">hello</div>
         <div contenteditable @input="console.log">hello</div>
         <div @update:modelValue="console.log">hello</div>
+        <div :contenteditable="maybe" @input="console.log">hello</div>
       </div>
     </template>
     <script>
