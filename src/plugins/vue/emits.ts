@@ -49,7 +49,7 @@ const addOrUpdateEmits = (options: namedTypes.ObjectExpression, emits: string[])
   }
 
   if (shouldAddEmits) {
-    options.properties.push(emitsProperty);
+    options.properties.unshift(emitsProperty);
   }
 
   const existingEmits = emitsArray

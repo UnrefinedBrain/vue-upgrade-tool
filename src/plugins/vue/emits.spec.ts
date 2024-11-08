@@ -29,6 +29,8 @@ const second = defineComponent({
 
   expect(transform(code, 'file.ts', [emitsNonSfcPlugin]).code).toMatchInlineSnapshot(`
     "const first = defineComponent({
+      emits: ['foo', 'bar'],
+
       methods: {
         a() {
           this.$emit('foo');
@@ -37,11 +39,11 @@ const second = defineComponent({
           this.$emit('bar');
         }
       },
-
-      emits: ['foo', 'bar'],
     });
 
     const second = defineComponent({
+      emits: ['baz', 'qux'],
+
       methods: {
         c() {
           this.$emit('baz');
@@ -50,8 +52,6 @@ const second = defineComponent({
           this.$emit('qux');
         }
       },
-
-      emits: ['baz', 'qux'],
     });
     "
   `);
@@ -83,6 +83,8 @@ export default defineComponent({
     </template>
     <script lang="ts">
     export default defineComponent({
+      emits: ['foo', 'bar', 'baz'],
+
       methods: {
         a() {
           this.$emit('bar');
@@ -91,8 +93,6 @@ export default defineComponent({
           this.$emit('baz');
         },
       },
-
-      emits: ['foo', 'bar', 'baz'],
     })
     </script>
     "
