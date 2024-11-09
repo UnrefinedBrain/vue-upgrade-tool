@@ -257,7 +257,7 @@ const makeDeepWatcher = (property: namedTypes.Property) => {
 
 export const arrayWatchPlugin: CodemodPlugin = {
   type: 'codemod',
-  name: 'array-watch',
+  name: 'vue-array-watch',
   transform({ scriptASTs, utils: { astHelpers }, filename }) {
     let count = 0;
     for (const scriptAST of scriptASTs) {

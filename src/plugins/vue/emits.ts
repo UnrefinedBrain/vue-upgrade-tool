@@ -78,7 +78,7 @@ const addOrUpdateEmits = (options: namedTypes.ObjectExpression, emits: string[])
 
 export const emitsNonSfcPlugin: CodemodPlugin = {
   type: 'codemod',
-  name: 'emits-non-sfc',
+  name: 'vue-emits-non-sfc',
   transform({
     filename,
     scriptASTs,
@@ -105,7 +105,7 @@ export const emitsNonSfcPlugin: CodemodPlugin = {
 
 export const emitsSfcPlugin: CodemodPlugin = {
   type: 'codemod',
-  name: 'emits-sfc',
+  name: 'vue-emits-sfc',
   transform({
     scriptASTs, sfcAST, filename, utils: { astHelpers },
   }) {
