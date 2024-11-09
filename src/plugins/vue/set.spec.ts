@@ -19,6 +19,7 @@ something.$set(target, 'key', value);
 // edge case
 Vue.set(a || b, 'c-d-e', d);
 Vue.set(a || b, 'foo-bar-baz', value);
+Vue.set(target, '0key', value);
 `;
 
   expect(transform(input, 'file.js', [vueSetPlugin]).code).toMatchInlineSnapshot(`
@@ -37,6 +38,7 @@ Vue.set(a || b, 'foo-bar-baz', value);
     // edge case
     (a || b)['c-d-e'] = d;
     (a || b)['foo-bar-baz'] = value;
+    target['0key'] = value;
     "
   `);
 });

@@ -71,7 +71,7 @@ export const vueSetPlugin: CodemodPlugin = {
             let key;
             if (property.type === 'Literal'
               && typeof property.value === 'string'
-              && /^[$a-zA-Z]\w+$/.test(property.value)) {
+              && !/(^\d)|[\s-]/.test(property.value)) {
               computed = false;
               key = builders.identifier(property.value);
             } else {

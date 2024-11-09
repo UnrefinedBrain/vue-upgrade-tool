@@ -39,9 +39,19 @@ export const vueDeletePlugin: CodemodPlugin = {
               return this.traverse(path);
             }
 
-            const newKey = property.type === 'Literal' && typeof property.value === 'string'
+            const newKey = property.type === 'Literal'
+              && typeof property.value === 'string'
+              && !/^\d/.test(property.value)
+              && !/[\s-]/.test(property.value)
               ? builders.identifier(property.value)
               : property;
+
+            let computed = property.type !== 'Literal';
+
+            if (newKey.type === 'Literal') {
+              computed = true;
+            }
+
             count++;
             path.replace(
               builders.unaryExpression(
@@ -49,7 +59,7 @@ export const vueDeletePlugin: CodemodPlugin = {
                 builders.memberExpression(
                   target,
                   newKey,
-                  property.type !== 'Literal',
+                  computed,
                 ),
               ),
             );

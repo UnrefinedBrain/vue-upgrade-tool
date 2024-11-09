@@ -15,6 +15,15 @@ something.$delete(target, key);
 
 // with regular $delete
 something.$delete(target, 'key');
+
+// with regular delete and a tricky key
+something.$delete(target, '0');
+
+// with regular delete and a tricky key
+something.$delete(target, 0);
+
+// with regular delete and a tricky key
+something.$delete(target, 'a property');
 `;
 
   expect(transform(input, 'file.js', [vueDeletePlugin]).code).toMatchInlineSnapshot(`
@@ -29,6 +38,15 @@ something.$delete(target, 'key');
 
     // with regular $delete
     delete target.key;
+
+    // with regular delete and a tricky key
+    delete target['0'];
+
+    // with regular delete and a tricky key
+    delete target[0];
+
+    // with regular delete and a tricky key
+    delete target['a property'];
     "
   `);
 });
