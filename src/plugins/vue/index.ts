@@ -22,6 +22,8 @@ import { isAttributePlugin } from './is-attribute';
 import { vDeepPlugin } from './v-deep';
 import { arrayWatchPlugin } from './array-watch';
 import { emitsNonSfcPlugin, emitsSfcPlugin } from './emits';
+import { transitionGroupRootElementPlugin } from './transition-group-root-element';
+import { transitionPropsPlugin } from './transition-props';
 
 export const vue = (): Plugin[] => ([
   vueSetPlugin,
@@ -50,4 +52,6 @@ export const vue = (): Plugin[] => ([
   arrayWatchPlugin,
   emitsSfcPlugin,
   emitsNonSfcPlugin,
+  transitionGroupRootElementPlugin,
+  transitionPropsPlugin,
 ]);
