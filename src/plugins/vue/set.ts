@@ -129,9 +129,6 @@ export const vueSetPlugin: CodemodPlugin = {
             }
           }
         },
-        leaveNode() {
-          // empty
-        },
       });
     }
 
