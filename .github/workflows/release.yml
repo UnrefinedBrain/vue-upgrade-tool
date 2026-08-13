@@ -32,9 +32,8 @@ jobs:
             -F draft=false \
             -F prerelease=false \
             -F generate_release_notes=true
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v4
         with:
-          version: ^8.14.1
           run_install: false
       - name: Install dependencies
         run: pnpm install

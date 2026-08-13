@@ -7,6 +7,7 @@
     "vue-upgrade-tool": "dist/cli.js"
   },
   "license": "MIT",
+  "packageManager": "pnpm@11.21.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/UnrefinedBrain/vue-upgrade-tool.git"

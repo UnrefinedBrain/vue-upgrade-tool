@@ -1,0 +1,9 @@
+# esbuild's postinstall links its platform-specific binary, which vite needs to build.
+allowBuilds:
+  esbuild: true
+
+# vue-metamorph is maintained alongside this tool and is often consumed
+# immediately after publishing, so it is exempt from the release-age cooldown.
+# All other dependencies keep pnpm's default 24h supply-chain protection.
+minimumReleaseAgeExclude:
+  - vue-metamorph

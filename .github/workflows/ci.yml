@@ -14,9 +14,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v4
         with:
-          version: ^8.14.1
           run_install: false
       - shell: bash
         run: |
@@ -37,9 +36,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v4
         with:
-          version: ^8.14.1
           run_install: false
       - shell: bash
         run: |
@@ -52,7 +50,7 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - run: pnpm install
-      - run: pnpm test -- --run
+      - run: pnpm test --run
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -60,9 +58,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v4
         with:
-          version: ^8.14.1
           run_install: false
       - shell: bash
         run: |
