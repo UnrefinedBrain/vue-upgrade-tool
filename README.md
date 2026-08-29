@@ -29,7 +29,7 @@ npx vue-upgrade-tool --files 'src/**/*' > vue_upgrade_output
 To run only some transformations, lookup their IDs in the table below or find them using `npx vue-upgrade-tool --list-plugins`, then pass them via the `--plugins` flag using a [micromatch pattern](https://github.com/micromatch/micromatch). To use multiple micromatch patterns, pass `--plugins` multiple times:
 
 ```sh
-npx vue-upgrade-tool --files 'src/**/*' --plugins 'vue-*' --plugins 'test-utils-*' > vue_upgrade_output
+npx vue-upgrade-tool --files 'src/**/*' --plugins 'vue-*' --plugins 'vuetify-*' --plugins 'test-utils-*' > vue_upgrade_output
 ```
 
 ## Vue
@@ -82,6 +82,25 @@ npx vue-upgrade-tool --files 'src/**/*' --plugins 'vue-*' --plugins 'test-utils-
 | Plugin | Plugin Name |Migration Type | Migration Guide |
 | - | - | - | - |
 | [Store instantiation changed](./src/plugins/vuex/instantiation.spec.ts) | `vuex-instantiation` | automatic | [Link](https://vuex.vuejs.org/guide/migrating-to-4-0-from-3-x.html#installation-process) |
+
+## Vuetify
+
+| Plugin | Plugin Name |Migration Type | Migration Guide |
+| - | - | - | - |
+| [vuetify-instantiation](src/plugins/vuetify/instantiation.ts) | `vuetify-instantiation` | Automatic | [Link](https://vuetifyjs.com/en/getting-started/upgrade-guide/#setup) |
+| [vuetify-text-colors](src/plugins/vuetify/text-colors.ts) | `vuetify-text-colors` | Automatic | [Link](https://vuetifyjs.com/en/getting-started/upgrade-guide/#features) |
+| [vuetify-v-alert](src/plugins/vuetify/v-alert.ts) | `vuetify-v-alert` | Automatic | [Link](https://vuetifyjs.com/en/getting-started/upgrade-guide/#components) |
+| [vuetify-v-chip](src/plugins/vuetify/v-chip.ts) | `vuetify-v-chip` | Automatic | [Link](https://vuetifyjs.com/en/getting-started/upgrade-guide/#components) |
+| [vuetify-v-dialog-v-menu](src/plugins/vuetify/v-dialog-v-menu.ts) | `vuetify-v-dialog-v-menu` | Automatic | [Link](https://vuetifyjs.com/en/getting-started/upgrade-guide/#components) |
+| [vuetify-v-list-item-content](src/plugins/vuetify/v-list-item-content.ts) | `vuetify-v-list-item-content` | Automatic | [Link](https://vuetifyjs.com/en/getting-started/upgrade-guide/#components) |
+| [vuetify-v-list-item-group-value](src/plugins/vuetify/v-list-item-group-value.ts) | `vuetify-v-list-item-group-value` | Automatic | [Link](https://vuetifyjs.com/en/getting-started/upgrade-guide/#components) |
+| [vuetify-v-select-change](src/plugins/vuetify/v-select-change.ts) | `vuetify-v-select-change` | Automatic | [Link](https://vuetifyjs.com/en/getting-started/upgrade-guide/#components) |
+| [vuetify-v-select-v-autocomplete](src/plugins/vuetify/v-select-v-autocomplete.ts) | `vuetify-v-select-v-autocomplete` | Automatic | [Link](https://vuetifyjs.com/en/getting-started/upgrade-guide/#components) |
+| [vuetify-v-simple-table](src/plugins/vuetify/v-simple-table.ts) | `vuetify-v-simple-table` | Automatic | [Link](https://vuetifyjs.com/en/getting-started/upgrade-guide/#components) |
+| [vuetify-v-tabs](src/plugins/vuetify/v-tabs.ts) | `vuetify-v-tabs` | Automatic | [Link](https://vuetifyjs.com/en/getting-started/upgrade-guide/#components) |
+| [vuetify-v-text-field](src/plugins/vuetify/v-text-field.ts) | `vuetify-v-text-field` | Automatic | [Link](https://vuetifyjs.com/en/getting-started/upgrade-guide/#components) |
+| [vuetify-v-tooltip-activators](src/plugins/vuetify/v-tooltip-activators.ts) | `vuetify-v-tooltip-activators` | Automatic | [Link](https://vuetifyjs.com/en/getting-started/upgrade-guide/#components) |
+| [vuetify-v-virtual-scroll](src/plugins/vuetify/v-virtual-scroll.ts) | `vuetify-v-virtual-scroll` | Automatic | [Link](https://vuetifyjs.com/en/getting-started/upgrade-guide/#components) |
 
 ## Vue Test Utils
 
